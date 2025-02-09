@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="disappear.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <title>Disappear</title>
+</head>
+<body>
+    <p>This page uses JavaScript to slowly delete itself as time passes.</p>
+    <p>Items are deleted from the bottom of the document working upwards.</p>
+    <p>Every single element will eventually be deleted. This includes body elements like text and images, as well as head elements like the title and styling.</p>
+    <p>To make sure you have time to read this, there are some extra elements below. If you've fast, you can see them before they disappear.</p>
+    <p class="secret">Hi! I'm a hidden element. You can see me now because the CSS got deleted.</p>
+    <br>
+
+    <!-- The style is in a weird place so there's still text left when it gets deleted.-->
+    <style>
+        body {
+            background-color: #000000;
+        }
+    
+        p {
+            font-family: "Inter";
+            color: #FFFFFF;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .secret {
+            visibility: hidden;
+            width: 0;
+            height: 0;
+        }
+
+        img {
+            width: 45vw;
+        }
+
+        button {
+            background-color: #000000;
+        }
+    </style>
+
+    <div class="image-container">
+        <img src="../images/frog.jpg" alt="Photo of a green frog on a branch, facing forward and to the left.">
+        <img src="../images/dinosaur.jpg" alt="Photo of a dinosaur attacking a city.">
+    </div>
+    <br>
+    <button onclick="button()" id="creator"><p>Fight back by adding more elements!</p></button>
+    <div id="sacrificialTextContainer"></div>
+    <button onclick="stopDeleting()"><p>Stop this madness!</p></button>
+
+</body>
+
+</html>
