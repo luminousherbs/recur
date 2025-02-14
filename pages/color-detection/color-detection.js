@@ -6,8 +6,14 @@ const colors = new Map([
 
 function getTextFromField() {
     const input = textField.value;
-    hex = colors.get(input)
-    textField.setAttribute("style", `color: ${input}`);
+    // hex = colors.get(input)
+    let formattedInput = "";
+    for (let w of input.split(" ")) {
+        w = `<span style="color: ${w}">${w}</span>`;
+        formattedInput += w + " ";
+        console.log(formattedInput)
+    }
+    output.innerHTML = formattedInput;
 }
 
 function onLoad() {
@@ -17,6 +23,8 @@ function onLoad() {
     // grab page elements
     const textField = document.getElementById("textField");
     textField.addEventListener("input", getTextFromField)
+    
+    const output = document.getElementById("output");
 }
 
 document.addEventListener("DOMContentLoaded", onLoad);
