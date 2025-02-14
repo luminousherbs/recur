@@ -1,12 +1,7 @@
 console.log("Hello, world!");
 
-const colors = new Map([
-    ["red", "#FF0000"],
-]);
-
 function getTextFromField() {
     const input = textField.value;
-    // hex = colors.get(input)
     let formattedInput = "";
     for (let w of input.split(" ")) {
         w = `<span style="color: ${w}">${w}</span>`;
