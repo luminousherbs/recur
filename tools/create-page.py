@@ -16,6 +16,17 @@ def create_page(name: str) -> None:
     with open(f"pages/{name}/{name}.js", "x") as scripts:
         content = js_template.read()
         scripts.write(content)
+
+    with open("index.html", "r+") as main:
+        content = main.read()
+        list_end = content.index("</ul>") - 4
+        # do not edit the ancient runes
+        content = content[:list_end] + f"        <li><p><a href=pages/{name}/index.html>{name}</a></p></li>\n" + content[list_end:]
+        print(content)
+        main.seek(0)
+        main.write(content)
+
+    
         
 
 create_page("tests")

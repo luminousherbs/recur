@@ -1,0 +1,21 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 2.5vh;
+    line-height: 1;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 5vh;
+    line-height: 1;
+    font-weight: 700;
+}
+
+a {
+    color: #EB80D9;
+}
