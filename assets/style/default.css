@@ -1,21 +1,29 @@
 body {
     background-color: #000000;
     color: #FFFFFF;
-    font-family: sans-serif;
+    font-family: Nunito Sans;
 }
 
 p {
-    font-size: 2.5vh;
+    font-size: 1rem;
     line-height: 1;
     font-weight: 400;
 }
 
 h1 {
-    font-size: 5vh;
+    font-size: 2.5rem;
     line-height: 1;
     font-weight: 700;
 }
 
-a {
+a:link {
+    color: #7EF984;
+}
+
+a:visited {
     color: #EB80D9;
+}
+
+a:hover {
+    color: #FAEC81;
 }

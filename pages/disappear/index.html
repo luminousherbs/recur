@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="disappear.js"></script>
+    <link rel="stylesheet" href="../../assets/style/default.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     
     <title>Disappear</title>
 </head>
@@ -14,6 +15,8 @@
     <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
+    <h1>Disappear</h1>
+    <hr>
     <p>This page uses JavaScript to slowly delete itself as time passes.</p>
     <p>Items are deleted from the bottom of the document working upwards.</p>
     <p>Every single element will eventually be deleted. This includes body elements like text and images, as well as head elements like the title and styling.</p>
@@ -23,14 +26,36 @@
 
     <!-- The style is in a weird place so there's still text left when it gets deleted.-->
     <style>
-        body {
-            background-color: #000000;
-        }
-    
-        p {
-            font-family: "Inter";
-            color: #FFFFFF;
-        }
+    body {
+        background-color: #000000;
+        color: #FFFFFF;
+        font-family: Nunito Sans;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1;
+        font-weight: 400;
+        color: #FFFFFF;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        font-weight: 700;
+    }
+
+    a:link {
+        color: #7EF984;
+    }
+
+    a:visited {
+        color: #EB80D9;
+    }
+
+    a:hover {
+        color: #FAEC81;
+    }
 
         .image-container {
             display: flex;
@@ -60,7 +85,8 @@
     <button onclick="button()" id="creator"><p>Fight back by adding more elements!</p></button>
     <div id="sacrificialTextContainer"></div>
     <button onclick="stopDeleting()"><p>Stop this madness!</p></button>
-
+    <hr>
+    <a href="../../index.html">Back to Things.</a>
 </body>
 
 </html>
