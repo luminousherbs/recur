@@ -1,4 +1,5 @@
 import os
+import sys
 
 def create_page(name: str) -> None:
     name = name.lower()
@@ -22,11 +23,11 @@ def create_page(name: str) -> None:
         list_end = content.index("</ul>") - 4
         # do not edit the ancient runes
         content = content[:list_end] + f"        <li><p><a href=pages/{name}/index.html>{name}</a></p></li>\n" + content[list_end:]
-        print(content)
+        # print(content)
         main.seek(0)
         main.write(content)
 
-    
-        
-
-create_page("tests")
+# sys.argv gets the command line arguments that were passed
+# element 0 is the name of the script, so we need element 1.
+page_name = sys.argv[1]
+create_page(page_name)
