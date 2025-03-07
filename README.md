@@ -1,2 +1,2 @@
 # things
-This repo is for all the small things I've made in JavaScript. You can view them by cloning the repo and opening `pages/[projectname]/index.html`, or you can view it offline at Github Pages.
+This repo is for all the small things I've made in JavaScript. You can see them [online on GitHub Pages](https://luminousherbs.github.io/things), or you can clone the repository with `git clone https://github.com/luminousherbs/things.git` to view them offline.
