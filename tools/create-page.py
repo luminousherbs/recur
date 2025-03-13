@@ -1,21 +1,21 @@
 import os
 import sys
 
-def create_page(name: str) -> None:
-    name = name.lower()
+def create_page(filename: str) -> None:
+    titlename = filename.title().replace("-", " ")
     # create the requested folder
     # os.makedirs(f"/things/{name}")
-    os.makedirs(f"things/{name}")
+    os.makedirs(f"things/{filename}")
 
     html_template = open("tools/template.html")
-    with open(f"things/{name}/index.html", "x") as index:
+    with open(f"things/{filename}/index.html", "x") as index:
         content = html_template.read()
         # replace variable references with the actual variables
-        content = content.format(page_name = name)
+        content = content.format(page_name = titlename, file_name = filename)
         index.write(content)
     
     js_template = open("tools/template.js")
-    with open(f"things/{name}/{name}.js", "x") as scripts:
+    with open(f"things/{filename}/{filename}.js", "x") as scripts:
         content = js_template.read()
         scripts.write(content)
 
@@ -23,7 +23,7 @@ def create_page(name: str) -> None:
         content = main.read()
         list_end = content.index("</ul>") - 4
         # do not edit the ancient runes
-        content = content[:list_end] + f"        <li><p><a href=\"/things/{name}/\">{name}</a></p></li>\n" + content[list_end:]
+        content = content[:list_end] + f"        <li><p><a href=\"/things/{filename}/\">{titlename}</a></p></li>\n" + content[list_end:]
         # print(content)
         main.seek(0)
         main.write(content)
