@@ -23,7 +23,7 @@ def create_page(filename: str) -> None:
         content = main.read()
         list_end = content.index("</ul>") - 4
         # do not edit the ancient runes
-        content = content[:list_end] + f"        <li><p><a href=\"/things/{filename}/\">{titlename}</a></p></li>\n" + content[list_end:]
+        content = content[:list_end] + f"        <li><a href=\"/things/{filename}/\">{titlename}</a></li>\n" + content[list_end:]
         # print(content)
         main.seek(0)
         main.write(content)
