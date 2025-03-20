@@ -2,31 +2,67 @@ body {
     background-color: #000000;
     color: #FFFFFF;
     font-family: Nunito Sans, sans-serif;
+    line-height: 1;
 }
 
 h1 {
     font-size: 2.5rem;
-    line-height: 1;
     font-weight: 700;
 }
 
 p {
     font-size: 1rem;
-    line-height: 1.25;
     font-weight: 400;
 }
 
 aside {
-    border-left: 4px solid #EEEEEE; /* Similar to Markdown blockquote */
-    padding: 5px 10px 5px 10px;
-    margin: 10px 0;
-    background-color: #222222; /* Light gray background */
-    font-style: italic; /* Optional: matches Markdown blockquote style */
+    border-left: 5px solid #EEEEEE;
+    padding: 1px 5px 1px 9px;
+    margin: 5px;
+    background-color: #222222;
+    font-style: italic;
+}
+
+section {
+    padding: 1px 5px 20px 15px;
+    margin: 5px;
+    background-color: #222222;
+
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #444444;
 }
 
 textarea {
     width: 95%;
     height: 95%;
+}
+
+button {
+    background-color: #FAEC81;
+    border-color: #C8BD67;
+    border-style: solid;
+    border-width: 2px;
+    color: #000000;
+}
+button:disabled {
+    background-color: #444444;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 2px;
+    color: #CCCCCC;
 }
 
 a:link {
