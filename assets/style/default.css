@@ -2,12 +2,25 @@ body {
     background-color: #000000;
     color: #FFFFFF;
     font-family: Nunito Sans, sans-serif;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 h1 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+h3 {
+    font-size: 1.17rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 p {
@@ -15,11 +28,20 @@ p {
     font-weight: 400;
 }
 
+strong {
+    font-weight: 800;
+}
+
+del {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
 aside {
     border-left: 5px solid #EEEEEE;
-    padding: 1px 5px 1px 9px;
+    padding: 5px 5px 5px 9px;
     margin: 5px;
-    background-color: #222222;
+    background-color: #333333;
     font-style: italic;
 }
 
