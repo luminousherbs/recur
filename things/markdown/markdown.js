@@ -71,7 +71,7 @@ function onInput() {
 
     // set the height of the box to the height of the content
     input.style.height = "auto";
-    input.style.height = input.scrollHeight + 'px';
+    input.style.height = input.scrollHeight + "px";
 
     // convert markdown to html
     text = replaceLineEffects(input.value);
@@ -99,7 +99,7 @@ function onLoad() {
 
     // not sure why i have to do this
     input.style.height = "auto";
-    input.style.height = input.scrollHeight + 'px';
+    input.style.height = input.scrollHeight + "px";
 
     // trigger display update
     onInput();

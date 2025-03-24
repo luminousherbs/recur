@@ -69,7 +69,9 @@ th {
 
 textarea {
     width: 95%;
-    height: 95%;
+    height: auto;
+    background-color: #222222;
+    color: #FFFFFF;
 }
 
 button {
