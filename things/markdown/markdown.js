@@ -96,6 +96,12 @@ function onLoad() {
 
     // set default value
     input.value = defaultInput;
+
+    // not sure why i have to do this
+    input.style.height = "auto";
+    input.style.height = input.scrollHeight + 'px';
+
+    // trigger display update
     onInput();
 }
 
