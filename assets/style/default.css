@@ -87,6 +87,8 @@ button:disabled {
     border-style: solid;
     border-width: 2px;
     color: #CCCCCC;
+    cursor: not-allowed;
+    
 }
 
 a:link {
