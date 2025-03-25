@@ -15,6 +15,8 @@ function freezeClicking() {
         clickFrozen = true;
         const freezeClickingButton = document.getElementById("freezeClicking");
         freezeClickingButton.innerText = "Unfreeze clicking";
+        freezeClickingButton.disabled = true;
+        document.getElementById("freeze").disabled = true;
     }
 }
 
