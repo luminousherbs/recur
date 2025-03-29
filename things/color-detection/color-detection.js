@@ -4,9 +4,12 @@ function getTextFromField() {
     const input = textField.value;
     let formattedInput = "";
     for (let w of input.split(" ")) {
+
+        // <span style="color: red">red</span>
         w = `<span style="color: ${w}">${w}</span>`;
+
+        // add back the space we lost by splitting on it
         formattedInput += w + " ";
-        console.log(formattedInput)
     }
     output.innerHTML = formattedInput;
 }
@@ -15,11 +18,12 @@ function onLoad() {
 
     console.log("The page has loaded!");
 
-    // grab page elements
+    // define elements
     const textField = document.getElementById("textField");
-    textField.addEventListener("input", getTextFromField)
-    
     const output = document.getElementById("output");
+
+    // listen for any change
+    textField.addEventListener("input", getTextFromField)
 }
 
 document.addEventListener("DOMContentLoaded", onLoad);
