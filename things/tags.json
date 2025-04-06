@@ -1,0 +1,13 @@
+{
+    "clock": ["time", "escalation"],
+    "color-detection": ["transformation"],
+    "day": ["joke"],
+    "disappear": ["time", "escalation"],
+    "highlight": ["transformation"],
+    "ideology": ["commentary"],
+    "markdown": ["transformation"],
+    "rules-for-robots": ["other"],
+    "shop": ["memory"],
+    "tags": ["construction"],
+    "verbs": ["transformation"]
+}
