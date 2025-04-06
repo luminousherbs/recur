@@ -29,7 +29,7 @@ function onChange() {
         output.innerText += " ";  looks like it should work,
         and when you run it in the console it returns the previous text with an extra space,
         but for some reason the space gets stripped off when it gets added back to the html,
-        so you end up with "heishappy".
+        so you end up with "sheishappy".
         that's why i have to append the space **before** each word on line 14.
         
         what's even worse,
