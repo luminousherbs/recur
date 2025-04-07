@@ -41,15 +41,17 @@ function setParameter(key, value) {
     return;
 }
 
+function onEnter() {
+    setParameter("url", field.value);
+    isRedirect();
+}
+
 function onLoad() {
     console.log("Page loaded!");
     if (!isRedirect()) {
         const field = document.getElementById("field");
         field.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                setParameter("url", field.value);
-                isRedirect();
-            }
+            if (event.key === "Enter") onEnter();
         });
     }
 }
