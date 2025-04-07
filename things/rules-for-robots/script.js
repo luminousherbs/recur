@@ -1,14 +1,7 @@
 console.log("Hello world!");
 
 function isRedirect() {
-    if (getParameter("url")) {
-        // window.open(`${getParameter("url")}/robots.txt`, "_self");
-        window.location.replace(`${getParameter("url")}/robots.txt`, "_self");
-        return true;
-    } else {
-        removeParameter("url");
-        return false;
-    }
+    return !!(getParameter("url"))
 }
 
 function removeParameter(key) {
@@ -43,7 +36,11 @@ function setParameter(key, value) {
 
 function onEnter() {
     setParameter("url", field.value);
-    isRedirect();
+    if (isRedirect()) {
+        window.location.replace(`${getParameter("url")}/robots.txt`, "_self");
+    } else {
+        removeParameter("url");
+    }
 }
 
 function onLoad() {
