@@ -5,9 +5,9 @@
     "disappear": ["time", "escalation"],
     "highlight": ["transformation"],
     "ideology": ["commentary"],
+    "javascript": ["other"],
     "markdown": ["transformation"],
     "rules-for-robots": ["other"],
     "shop": ["memory"],
-    "tags": ["construction"],
     "verbs": ["transformation"]
 }
