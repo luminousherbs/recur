@@ -1,4 +1,5 @@
 {
+    "appear": ["time", "joke"],
     "clock": ["time", "escalation"],
     "color-detection": ["transformation"],
     "day": ["joke"],
