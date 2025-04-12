@@ -25,7 +25,7 @@ And here are some horizontal lines:
 ---
 ---
 ---
-> Pretty cool, huh?`;
+> This is a blockquote.`;
 
 function replaceToggleables(text) {
     // loop for each tag
