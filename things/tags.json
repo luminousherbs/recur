@@ -7,6 +7,7 @@
     "ideology": ["commentary"],
     "javascript": ["utility"],
     "rules-for-robots": ["other"],
+    "calculator": ["transformation", "utility"],
     "verbs": ["transformation"],
     "markdown": ["transformation", "utility"],
     "day": ["joke"],
