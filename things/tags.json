@@ -1,14 +1,14 @@
 {
-    "appear": ["time", "joke"],
     "clock": ["time", "escalation"],
-    "color-detection": ["transformation"],
-    "day": ["joke"],
+    "appear": ["time", "joke"],
     "disappear": ["time", "escalation"],
     "highlight": ["transformation"],
+    "color-detection": ["transformation"],
     "ideology": ["commentary"],
-    "javascript": ["other"],
-    "markdown": ["transformation"],
+    "javascript": ["utility"],
     "rules-for-robots": ["other"],
-    "shop": ["memory"],
-    "verbs": ["transformation"]
+    "verbs": ["transformation"],
+    "markdown": ["transformation", "utility"],
+    "day": ["joke"],
+    "shop": ["memory"]
 }
