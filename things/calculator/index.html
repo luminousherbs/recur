@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
+    <style>
+        input {
+            width: 36ch; /* arbitrary, fix soon with js? */
+        }
+    </style>
+
     <!-- favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-32x32.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-16x16.png">
@@ -33,7 +39,7 @@
                     <label for="field-word">Words: </label>
                 </td>
                 <td>
-                    <input type="text" id="field-word"><br>
+                    <input type="text" id="field-word" value="twenty-two squared minus four cubed"><br>
                 </td>
             </tr>
             <tr>
@@ -41,7 +47,7 @@
                     <label for="field-math">Math: </label>
                 </td>
                 <td>
-                    <input type="text" id="field-math"><br>
+                    <input type="text" id="field-math" value="22 ** 2 - 4 ** 3"><br>
                 </td>
             </tr>
             <tr>
@@ -49,7 +55,7 @@
                     <label for="field-answer">Answer: </label>
                 </td>
                 <td>
-                    <input type="text" id="field-answer"><br>
+                    <input type="text" id="field-answer" value="420"><br>
                 </td>
             </tr>
         </tbody>
