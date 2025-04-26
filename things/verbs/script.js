@@ -3,7 +3,10 @@ console.log("Hello world!");
 const verbs = new Map([
     // if english was a logical language, we wouldn't have to hardcode these, but alas.
     ["i", "she"], /* not technically a verb but i dont want to rename it */
-    ["am", "is"],
+    ["my", "her"], /* not technically a verb but i dont want to rename it */
+    ["me", "her"], /* not technically a verb but i dont want to rename it */
+    ["mine", "hers"], /* not technically a verb but i dont want to rename it */
+    ["am", "are"],
     ["have", "has"],
     ["do", "does"],
     ["know", "knows"],
@@ -16,36 +19,44 @@ const verbs = new Map([
     ["want", "wants"],
 ])
 
-function onChange() {
-    // console.log("CHANGE!");
-    output.innerText = "";
-    for (const word of field.value.split(" ")) {
-        output.innerText += (" ");
-        const newWord = verbs.get(word.toLowerCase());
-        output.innerText += (" " + (newWord ? newWord : word));
-
-        /*
-        ok this is why i hate html
-        output.innerText += " ";  looks like it should work,
-        and when you run it in the console it returns the previous text with an extra space,
-        but for some reason the space gets stripped off when it gets added back to the html,
-        so you end up with "sheishappy".
-        that's why i have to append the space **before** each word on line 14.
-        
-        what's even worse,
-        you'd think my solution adds an extra space before the whole thing,
-        but that gets stripped as well.
-        */
+function flipMap(map) {
+    const newMap = new Map();
+    for (const [key, value] of map) {
+        newMap.set(value, key)
     }
+    return newMap;
+}
+
+let input, output;
+
+function onInputInput() {
+    output.value = "";
+    for (const word of input.value.split(" ")) {
+        const newWord = verbs.get(word.toLowerCase());
+        output.value += " " + (newWord ? newWord : word);
+    }
+    output.value = output.value.replace(" ", "")
+    
+}
+
+function onOutputInput() {
+    input.value = "";
+    for (const word of output.value.split(" ")) {
+        const newWord = flipMap(verbs).get(word.toLowerCase());
+        input.value += " " + (newWord ? newWord : word);
+    }
+    // replace the first space
+    input.value = input.value.replace(" ", "")
     
 }
 
 function onLoad() {
     console.log("Page loaded!");
     // define elements
-    const field = document.getElementById("field");
-    const output = document.getElementById("output");
-    field.addEventListener("input", onChange);
+    input = document.getElementById("inputField");
+    output = document.getElementById("outputField");
+    input.addEventListener("input", onInputInput);
+    output.addEventListener("input", onOutputInput);
 }
 
 document.addEventListener("DOMContentLoaded", onLoad);
