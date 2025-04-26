@@ -65,6 +65,9 @@ function convertWordToMath(words) {
     let newWords = [];
     for (let w of words) {
 
+        // i dont think this is working
+        w = w.toLowerCase()
+
         // skip empty strings
         if (w === "") {
             newWords.push("")

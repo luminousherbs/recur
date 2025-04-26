@@ -29,6 +29,7 @@ function shiftMinusOne(str) {
 }
 
 function caesarShift(str, shift) {
+    shift %= 26; // save some time
     for (let i = 0; i < Math.abs(shift); i++) {
         str = (Math.abs(shift) === shift ? shiftOne: shiftMinusOne)(str)
     }
