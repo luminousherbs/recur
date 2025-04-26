@@ -12,5 +12,6 @@
     "verbs": ["transformation"],
     "markdown": ["transformation", "utility"],
     "day": ["joke"],
+    "magpie-counter": ["broken"],
     "shop": ["memory"]
 }
