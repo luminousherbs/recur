@@ -10,7 +10,7 @@ time,
 one
 word
 every
-second,
+tick,
 until
 the
 whole
