@@ -4,6 +4,7 @@
     "disappear": ["time", "escalation"],
     "highlight": ["transformation"],
     "color-detection": ["transformation"],
+    "quadratic-solver": ["transformation", "useful", "reversible"],
     "ideology": ["commentary"],
     "cipher": ["transformation", "useful", "reversible"],
     "rich-people-only": ["other"],
@@ -13,6 +14,6 @@
     "verbs": ["transformation"],
     "markdown": ["transformation", "useful"],
     "day": ["joke"],
-    "magpie-counter": ["transformation", "joke"],
+    "magpie-counter": ["transformation", "joke", "reversible"],
     "shop": ["memory"]
 }

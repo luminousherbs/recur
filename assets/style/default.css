@@ -116,3 +116,9 @@ a:visited {
 a:hover {
     color: #FAEC81;
 }
+
+
+
+input {
+    font-family: Nunito Sans, sans-serif;
+}
