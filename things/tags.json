@@ -7,6 +7,7 @@
     "quadratic-solver": ["transformation", "useful", "reversible"],
     "ideology": ["commentary"],
     "cipher": ["transformation", "useful", "reversible"],
+    "german": ["transformation", "reversible"],
     "rich-people-only": ["other"],
     "javascript": ["useful"],
     "rules-for-robots": ["other"],
