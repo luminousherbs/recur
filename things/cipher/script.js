@@ -1,7 +1,7 @@
 console.log("Hello world!");
 let forward = true;
 
-const pageLocation = "things/cipher";
+const pageLocation = "things/cipher/";
 
 function downloadFile(filepath) {
     const a = document.createElement("a");
@@ -14,7 +14,7 @@ function downloadFile(filepath) {
 }
 
 function edit() {
-    window.location.href = `https://github.com/luminousherbs/luminousherbs.github.io/tree/main/${pageLocation}/`;
+    window.location.href = `https://github.com/luminousherbs/luminousherbs.github.io/tree/main/${pageLocation}`;
 }
 
 function share() {

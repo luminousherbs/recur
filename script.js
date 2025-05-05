@@ -1,4 +1,4 @@
-const pageLocation = "things/day/";
+const pageLocation = "";
 
 function downloadFile(filepath) {
     const a = document.createElement("a");

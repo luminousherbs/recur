@@ -1,6 +1,6 @@
 console.log("Hello world!");
 
-const pageLocation = "things/markdown";
+const pageLocation = "things/markdown/";
 
 function downloadFile(filepath) {
     const a = document.createElement("a");
@@ -13,7 +13,7 @@ function downloadFile(filepath) {
 }
 
 function edit() {
-    window.location.href = `https://github.com/luminousherbs/luminousherbs.github.io/tree/main/${pageLocation}/`;
+    window.location.href = `https://github.com/luminousherbs/luminousherbs.github.io/tree/main/${pageLocation}`;
 }
 
 function share() {
