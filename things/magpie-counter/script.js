@@ -59,7 +59,7 @@ const magpieConversionLancashire = new Map([
 function flipMap(map) {
     const newMap = new Map();
     for (const [key, value] of map) {
-        newMap.set(value, key)
+        newMap.set(value, key);
     }
     return newMap;
 }
