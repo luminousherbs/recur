@@ -16,5 +16,6 @@
     "markdown": ["transformation", "useful"],
     "day": ["joke"],
     "magpie-counter": ["transformation", "joke", "reversible"],
-    "shop": ["memory"]
+    "shop": ["memory"],
+    "shifty-scale": ["joke"]
 }
