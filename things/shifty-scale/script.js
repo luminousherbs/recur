@@ -11,16 +11,16 @@ const celsiusToDoneness = new Map([
 ])
 
 const shiftyScores = new Map([
-    [0, "medium"], // too confusing to make a clear judgement
-    [1, "well done"], // pretty shifty if you ask me
-    [2, "medium rare"], // that's not shifty, wearing a clown mask just improves his programming abilities
-    [3, "blue"], // he's living his best life
-    [4, "overcooked"], // that's textbook shifty right there
-    [5, "overcooked"], // is this a dagger which i see before me?
-    [6, "medium well"], // that's a shifty expression but not a shifty shirt
-    [7, "rare"], // nothing shifty about this
-    [8, "well done"], // she's practising semaphore while high, a classic indicator of shift
-    [9, "rare"], // don't judge him, his hoodie was surgically attached to him in a freak accident
+    [0, "medium"],
+    [1, "well done"],
+    [2, "medium rare"],
+    [3, "blue"],
+    [4, "overcooked"],
+    [5, "overcooked"],
+    [6, "medium well"],
+    [7, "rare"],
+    [8, "well done"],
+    [9, "rare"],
 ])
 
 const shiftyExplanations = new Map([
@@ -32,7 +32,7 @@ const shiftyExplanations = new Map([
     [5, "Will all great Neptune's oceans wash this shift clear from my hands?"],
     [6, "That's a shifty expression but not a shifty shirt."],
     [7, "Nothing shifty about this."],
-    [8, "She's practising semaphore while high, a clear indicator of shift."],
+    [8, "Doing the YMCA while high is a clear indicator of shift."],
     [9, "Don't judge him, his hoodie was surgically attached to him in a freak accident."],
 ])
 
