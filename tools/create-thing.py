@@ -16,13 +16,14 @@ def create_page(filename: str) -> None:
     js_template = open("tools/template.js")
     with open(f"things/{filename}/script.js", "x") as script:
         content = js_template.read()
+        content = content.replace("{file_name}", filename)
         script.write(content)
 
-    with open("things/index.html", "r+") as main:
-        content = main.read()
-        list_end = content.index("</ul>") - 4
-        main.seek(0)
-        main.write(content)
+    # with open("things/index.html", "r+") as main:
+    #     content = main.read()
+    #     list_end = content.index("</ul>") - 4
+    #     main.seek(0)
+    #     main.write(content)
 
 # sys.argv gets the command line arguments that were passed
 # element 0 is the name of the script, so we need element 1.
