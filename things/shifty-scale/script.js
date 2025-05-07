@@ -92,6 +92,8 @@ function onTemperatureInput() {
     fieldDoneness.value = convertUsingLowerLimit(fieldTemperature.value, celsiusToDoneness);
     if (fieldDoneness.value == "blue") {
         document.body.style.color = "blue";
+    } else {
+        document.body.style.color = "white";
     }
 }
 
@@ -99,6 +101,8 @@ function onDonenessInput() {
     fieldTemperature.value = (flipMap(celsiusToDoneness).get(fieldDoneness.value)) ?? fieldTemperature.value;
     if (fieldDoneness.value == "blue") {
         document.body.style.color = "blue";
+    } else {
+        document.body.style.color = "white";
     }
 }
 
