@@ -40,17 +40,17 @@ colors = new Map([
     ["=", "white"],
     ["==", "white"],
     ["===", "white"],
-    [">", "white"]
-    ["<", "white"]
-    [">=", "white"]
-    ["<=", "white"]
-    ["!=", "white"]
-    ["!==", "white"]
-    ["+", "white"]
-    ["-", "white"]
-    ["*", "white"]
-    ["/", "white"]
-    ["**", "white"]
+    [">", "white"],
+    ["<", "white"],
+    [">=", "white"],
+    ["<=", "white"],
+    ["!=", "white"],
+    ["!==", "white"],
+    ["+", "white"],
+    ["-", "white"],
+    ["*", "white"],
+    ["/", "white"],
+    ["**", "white"],
     
 ])
 
