@@ -33,10 +33,25 @@ colors = new Map([
     ["let", "lightgreen"],
     ["if", "lightgreen"],
     ["else", "lightgreen"],
+    ["function", "lightgreen"],
+    ["for", "lightgreen"],
+    ["while", "lightgreen"],
     ["of", "lightgreen"],
     ["=", "white"],
     ["==", "white"],
     ["===", "white"],
+    [">", "white"]
+    ["<", "white"]
+    [">=", "white"]
+    ["<=", "white"]
+    ["!=", "white"]
+    ["!==", "white"]
+    ["+", "white"]
+    ["-", "white"]
+    ["*", "white"]
+    ["/", "white"]
+    ["**", "white"]
+    
 ])
 
 let input, output;
