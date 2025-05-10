@@ -33,6 +33,8 @@ let input, output;
 const toggleables = new Map([
     ["**", ["<strong>", "</strong>"]],
     ["*", ["<em>", "</em>"]],
+    ["__", ["<strong>", "</strong>"]],
+    ["_", ["<em>", "</em>"]],
     ["~~", ["<del>", "</del>"]],
     ["```", ["<pre><code>", "</pre></code>"]],
     ["`", ["<code>", "</code>"]],
