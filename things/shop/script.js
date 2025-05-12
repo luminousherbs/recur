@@ -51,7 +51,7 @@ function updateDisplay() {
     output.innerText = `You have ${localStorage.getItem("coins") || 0} coins.`
     itemsDisplay.innerHTML = "";
     prices.forEach(function(value, key) {
-        console.log(`Checking ${key}: ${!!(localStorage.getItem(key))}`)
+        // console.log(`Checking ${key}: ${!!(localStorage.getItem(key))}`)
         if (localStorage.getItem(key)) itemsDisplay.innerHTML += `${key}: ${localStorage.getItem(key)} <br>`
     })
     updateAffordable();
@@ -60,7 +60,7 @@ function updateDisplay() {
 function updateAffordable() {
     prices.forEach(function(value, key) {
         if (value > getCoins()) {
-            console.log(key, document.getElementById(key));
+            // console.log(key, document.getElementById(key));
             document.getElementById(key).children[2].firstChild.disabled = true;
         } else {
             document.getElementById(key).children[2].firstChild.disabled = false;
