@@ -35,14 +35,15 @@ const wordToMath = new Map([
     ["to", ""],
     ["the", ""],
     ["of", ""],
+    ["a", ""],
     ["", ""],
 
     ["zero", "0"],
 
-    ["half", "1/2"],
-    ["third", "1/3"],
-    ["quarter", "1/4"],
-    ["fifth", "1/5"],
+    ["half", "(1/2)"],
+    ["third", "(1/3)"],
+    ["quarter", "(1/4)"],
+    ["fifth", "(1/5)"],
 
     ["one", "1"],
     ["two", "2"],
@@ -62,8 +63,10 @@ const wordToMath = new Map([
     ["thirty", "30"],
     ["forty", "40"],
     ["fifty", "50"],
+    ["hundred", "100"],
 
     ["and", "+"],
+    ["add", "+"],
     ["plus", "+"],
     ["negative", "-"],
     ["minus", "-"],
@@ -92,13 +95,11 @@ function flipMap(map) {
 function convertWordToMath(words) {
     let newWords = [];
     for (let w of words) {
-
-        // i dont think this is working
-        w = w.toLowerCase()
+        w = w.toLowerCase();
 
         // skip empty strings
         if (w === "") {
-            newWords.push("")
+            newWords.push("");
 
         // if the word is in the map,
         } else if (wordToMath.get(w) !== undefined) {
@@ -108,17 +109,18 @@ function convertWordToMath(words) {
         // if it has a dash,
         } else if (w.includes("-")) {
             // break it into parts and add them.
-            newWords.push((+wordToMath.get(w.split("-")[0]) + +wordToMath.get(w.split("-")[1])) || "?");
+            const parts = w.split("-");
+            newWords.push((convertWordToMath([parts[0]])[0] - - convertWordToMath([parts[1]])[0]) ?? "?");
         
         // if it ends in teen,
         } else if (w.includes("teen")) {
             // get the entry for the base word and add ten.
-            newWords.push('' + ((wordToMath.get(w.replace("teen", "")) - - 10) || "?"))
+            newWords.push('' + ((+convertWordToMath([w.replace("teen", "")])[0] - - 10) ?? "?"));
         
         // if it ends in ty,
         } else if (w.includes("ty")) {
             // get the entry for the base word and multiply by ten.
-            newWords.push('' + ((wordToMath.get(w.replace("ty", "")) * 10) || "?"))
+            newWords.push('' + ((+convertWordToMath([w.replace("ty", "")])[0] * 10) ?? "?"));
         
         // otherwise,
         } else {
@@ -144,25 +146,24 @@ function convertMathToWord(math) {
             newWords.push("")
 
         // if the math is in the map,
-        } else  */if (map.get(''+m)) {
+        } else  */if (map.get(''+ m)) {
             // push its entry.
-            words.push(map.get(''+m));
+            words.push(map.get(''+ m));
         
         // if it's more than 20 and doesn't divide by 10,
-        } else if (+m > 20 && +m % 10 === 0) {
+        } else if (+m > 20 && +m % 10 !== 0) {
             // break it into parts and hyphenate them.
-            // FIX: CAN'T HANDLE 22
-            words.push(map.get(''+(Math.floor(m / 10) * 10)) + "-" + map.get(''+(m % 10)));
+            words.push(convertMathToWord([''+(Math.floor(m / 10) * 10)])[0] + "-" + convertMathToWord([''+(m % 10)])[0]);
         
         // if it's between 13 and 19,
         } else if (+m >= 13 && +m <= 19) {
             // get the entry for the number minus ten and join "teen".
             words.push(map.get(''+(m - 10)) + "teen");
         
-        // if it ends in ty,
+        // if it divides by 10,
         } else if (m % 10 === 0) {
             // get the entry for the base number and join "ty".
-            words.push(map.get(''+(m/10)) + "ty");
+            words.push(convertMathToWord([''+(m/10)])[0] + "ty");
         
         // otherwise,
         } else {
