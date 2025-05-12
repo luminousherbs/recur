@@ -5,7 +5,6 @@
     "highlight": ["transformation"],
     "color-detection": ["transformation"],
     "quadratic-solver": ["transformation", "useful", "reversible"],
-    "ideology": ["commentary"],
     "cipher": ["transformation", "useful", "reversible"],
     "german": ["transformation", "reversible"],
     "rich-people-only": ["other"],
