@@ -30,7 +30,7 @@ function downloadJavaScript() {
 
 const results = new Map([
     [0, new Map([[true, "public healthcare advocate"], [false, "private healthcare advocate"]])],
-    [1, new Map([[true, "opposes gay marriage"], [false, "opposes gay marriage"]])],
+    [1, new Map([[true, "opposes gay marriage"], [false, "supports gay marriage"]])],
     [2, new Map([[true, "prefers progressive tax"], [false, "prefers linear tax"]])],
 ])
 
