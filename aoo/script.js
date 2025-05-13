@@ -1,6 +1,6 @@
 console.log("Hello world!");
 
-const pageLocation = "things/aoo";
+const pageLocation = "aoo";
 
 let input, output;
 
