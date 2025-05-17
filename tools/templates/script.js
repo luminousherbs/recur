@@ -1,6 +1,6 @@
 console.log("Hello world!");
 
-const pageLocation = "things/{file_name}";
+const pageLocation = "{file_name}";
 
 function downloadFile(filepath) {
     const a = document.createElement("a");

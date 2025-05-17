@@ -19,31 +19,33 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
 
     <!-- og (mastodon card) -->
-    <meta property="og:title" content="luminousherbs">
+    <meta property="og:title" content="Page Creator">
     <meta property="og:description" content="A website by luminousherbs.">
-    <meta property="og:image" content="https://luminousherbs.github.io/">
-    <meta property="og:url" content="https://luminousherbs.github.io/">
+    <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
+    <meta property="og:url" content="https://luminousherbs.github.io/things/create-page">
     <meta property="og:type" content="website">
     
-    <title>luminousherbs</title>
+    <title>Page Creator</title>
 </head>
 <body>
-    <!-- <noscript>
+    <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-    </noscript> -->
-    <h1>luminousherbs</h1>
+    </noscript>
+    <h1>Page Creator</h1>
     <button onclick="edit()">Edit</button>
     <button onclick="share()">Share</button>
     <button onclick="downloadHTML()">Download HTML</button>
     <button onclick="downloadJavaScript()">Download JavaScript</button>
     <hr>
-    <p>Welcome to my website. Here are some of the things on it: </p>
-    <ul>
-        <li><a href="/oi/">oi</a>, a <a href="https://todepond.com/lab/login">Login</a> client which only displays the best 19% of the alphabet</li>
-        <li><a href="/tools/">The tools I use to make this site</a></li>
-        <li><a href="/things/">Things</a></li>
-    </ul>
+    <p>You can use this page to create a new page on the site. You must be serving locally from /tools/serve.js.</p>
+    <form>
+        <input type="text" placeholder="Page Title" name="pageName">
+        <br>
+        <input type="text" placeholder="path/to/page/" name="pagePath">
+        <br>
+        <button type="submit">Create</button>
+    </form>
     <hr>
-    <a href="https://github.com/luminousherbs/luminousherbs.github.io">View source</a>
+    <a href="/tools/">&lt; Tools</a>
 </body>
 </html>

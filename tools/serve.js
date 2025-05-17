@@ -1,23 +1,48 @@
 const express = require("express");
 const path = require("path");
+const fs = require("node:fs");
 const app = express();
 
 app.use(express.json()); // parse json
 app.use(express.static(path.join(__dirname, "../"))); // serve from root
 
-app.post("/", (req, res) => {
-  // handle POSTs to /
-  // console.log(`Receieved POST for ${__dirname}`);
-  console.log(req.body);
-  res.send(`Receieved POST for ${__dirname}`)
+function createPage(pagePath, pageName) {
+
+    if (fs.existsSync(pagePath)) throw new Error(`File /${pagePath} already exists.`);
+
+    // i hate async so we're only using sync
+    let htmlTemplate = fs.readFileSync("tools/templates/index.html", "utf-8");
+    htmlTemplate = htmlTemplate.replaceAll("{page_name}", pageName).replaceAll("{file_name}", pagePath);
+
+    let jsTemplate = fs.readFileSync("tools/templates/script.js", "utf-8");
+    jsTemplate = jsTemplate.replaceAll("{page_name}", pageName).replaceAll("{file_name}", pagePath);
+
+
+    fs.mkdirSync(pagePath, { recursive: true}); // make the folder and any subfolders
+    fs.writeFileSync(`${pagePath}/index.html`, htmlTemplate); // write the template to index.html
+    fs.writeFileSync(`${pagePath}/script.js`, jsTemplate); // write the template to script.js
+
+    return true;
+
+}
+
+app.post("/tools/create-page/", (req, res) => {
+    console.log(`Received request to create ${req.body.pageName} at /${req.body.pagePath}`)
+
+    try {
+        createPage(req.body.pagePath, req.body.pageName);
+        res.status(200).send({ok: true}); 
+        res.end();
+        console.log(`Successfully created ${req.body.pageName} at /${req.body.pagePath}`)
+    } catch (err) {
+        console.log(err.message);
+        // return an error
+        res.status(400).send({ ok: false, error: err.message });
+    }
+
 });
 
-app.get("/", (req, res) => {
-  // handle GETs to the server
-  console.log(`Receieved GET for ${__dirname}`);
-  res.sendFile(path.join(__dirname, "index.html"));
-});
 
 app.listen(8000, () => {
-  console.log("Serving on 8000");
+    console.log("Serving on 8000");
 });
