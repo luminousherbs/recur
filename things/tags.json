@@ -7,14 +7,15 @@
     "quadratic-solver": ["transformation", "useful", "reversible"],
     "cipher": ["transformation", "useful", "reversible"],
     "german": ["transformation", "reversible"],
-    "rich-people-only": ["other"],
     "javascript": ["useful"],
+    "shop": ["memory", "money"],
     "rules-for-robots": ["other"],
     "calculator": ["transformation", "useful", "reversible"],
     "verbs": ["transformation"],
+    "rich-people-only": ["memory", "money"],
     "markdown": ["transformation", "useful"],
     "day": ["joke"],
+    "gamble": ["memory", "money"],
     "magpie-counter": ["transformation", "joke", "reversible"],
-    "shop": ["memory"],
     "shifty-scale": ["joke"]
 }
