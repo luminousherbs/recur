@@ -35,7 +35,7 @@ const prices = new Map([
 ])
 
 function getCoins() {
-    return localStorage.getItem("coins") ?? 0;
+    return +localStorage.getItem("coins") ?? 0;
 }
 
 function buy(item) {
@@ -51,7 +51,6 @@ function updateDisplay() {
     output.innerText = `You have ${getCoins()} coins.`
     itemsDisplay.innerHTML = "";
     prices.forEach(function(value, key) { // surely value and key are the wrong way round?
-        console.log(`Checking ${key}: ${!!(localStorage.getItem(key))}`)
         if (localStorage.getItem(key)) itemsDisplay.innerHTML += `${key}: ${localStorage.getItem(key)} <br>`
     })
     updateAffordable();
