@@ -19,29 +19,28 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
 
     <!-- og (mastodon card) -->
-    <meta property="og:title" content="Tools">
+    <meta property="og:title" content="Kill Server">
     <meta property="og:description" content="A website by luminousherbs.">
     <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
-    <meta property="og:url" content="https://luminousherbs.github.io/things/tools">
+    <meta property="og:url" content="https://luminousherbs.github.io/things/tools/kill-server">
     <meta property="og:type" content="website">
     
-    <title>Tools</title>
+    <title>Kill Server</title>
 </head>
 <body>
     <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
-    <h1>Tools</h1>
+    <h1>Kill Server</h1>
     <button onclick="edit()">Edit</button>
     <button onclick="share()">Share</button>
     <button onclick="downloadHTML()">Download HTML</button>
     <button onclick="downloadJavaScript()">Download JavaScript</button>
     <hr>
-    <p>Here are the tools I use to make my website. They only work if you're serving locally from <a href="serve.js">serve.js</a>.</p>
-    <ul>
-        <li><a href="create-page/">Page creator</a></li>
-        <li><a href="kill-server/">Kill server</a></li>
-    </ul>
+    <p>You can use this page to kill the local server. This will disconnect all users, so only do it if you're absolutely sure.</p>
+    <form>
+        <button type="submit">Kill server</button>
+    </form>
     <hr>
     <a href="/">&lt; luminousherbs</a>
 </body>

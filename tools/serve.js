@@ -27,7 +27,7 @@ function createPage(pagePath, pageName) {
 }
 
 app.post("/tools/create-page/", (req, res) => {
-    console.log(`Received request to create ${req.body.pageName} at /${req.body.pagePath}`)
+    console.log(`Received request to create ${req.body.pageName} at /${req.body.pagePath}`);
 
     try {
         createPage(req.body.pagePath, req.body.pageName);
@@ -40,6 +40,11 @@ app.post("/tools/create-page/", (req, res) => {
         res.status(400).send({ ok: false, error: err.message });
     }
 
+});
+
+app.post("/tools/kill-server/", (req, res) => {
+    console.log("Received request to kill server");
+    process.exit(0);
 });
 
 
