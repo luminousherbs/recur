@@ -28,7 +28,7 @@ function downloadJavaScript() {
     downloadFile("./script.js");
 }
 
-let input, output;
+let input, output, html;
 
 const toggleables = new Map([
     ["**", ["<strong>", "</strong>"]],
@@ -41,11 +41,14 @@ const toggleables = new Map([
 ])
 
 const lineEffects = new Map([
-    ["## ", ["<h2>", "</h2>"]],
-    ["### ", ["<h3>", "</h3>"]],
-    ["# ", ["<h1>", "</h1>"]],
-    ["> ", ["<aside>", "</aside>"]],
-    ["---", ["<hr>", ""]],
+    ["# ", ["\n<h1>", "</h1>\n"]],
+    ["## ", ["\n<h2>", "</h2>\n"]],
+    ["### ", ["\n<h3>", "</h3>\n"]],
+    ["#### ", ["\n<h4>", "</h4>\n"]],
+    ["##### ", ["\n<h5>", "</h5>\n"]],
+    ["###### ", ["\n<h6>", "</h6>\n"]],
+    ["> ", ["\n<aside>", "</aside>\n"]],
+    ["---", ["\n<hr>", ""]],
 ])
 
 const defaultInput = `## Welcome to Markdown
@@ -98,19 +101,41 @@ function replaceLineEffects(text) {
     return newText;
 }
 
-function onInput() {
+function setHeights() {
 
     // set the height of the box to the height of the content
+
     input.style.height = "auto";
     input.style.height = input.scrollHeight + "px";
+    
+    html.style.height = "auto";
+    html.style.height = html.scrollHeight + "px";
+}
+
+function onInput() {
+
+    setHeights();
 
     // convert markdown to html
     text = replaceLineEffects(input.value);
-    text = text.replaceAll("\n", "<br>"); // html sucks
     text = replaceToggleables(text);
 
-    // set the html
+    // set the text
     output.innerHTML = text;
+
+    // set the html
+    html.value = text;
+
+}
+
+function onHtml() {
+
+    setHeights();
+
+    // set the text
+    output.innerHTML = html.value;
+
+    // TODO: set the markdown
 
 }
 
@@ -121,19 +146,22 @@ function onLoad() {
     // define elements
     input = document.getElementById("inputField");
     output = document.getElementById("outputField");
+    html = document.getElementById("htmlField");
     
     // listen for events
     input.addEventListener("input", onInput);
+    html.addEventListener("input", onHtml);
 
     // set default value
     input.value = defaultInput;
 
-    // not sure why i have to do this
-    input.style.height = "auto";
-    input.style.height = input.scrollHeight + "px";
-
     // trigger display update
     onInput();
+
+    // this is required for some css reason
+    // it makes the page jump a bit but it's better than having a massive box
+    setTimeout(setHeights, 1)
+
 }
 
 document.addEventListener("DOMContentLoaded", onLoad);
