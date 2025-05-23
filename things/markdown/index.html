@@ -39,16 +39,19 @@
     <hr>
 
     <label for="inputField">Markdown</label>
+    <button id="markdownCopy" onclick="navigator.clipboard.writeText(inputField.value)">Copy</button>
     <br>
     <textarea id="inputField"></textarea>
     <br><br>
 
     <label for="htmlField">HTML</label>
+    <button id="htmlCopy" onclick="navigator.clipboard.writeText(htmlField.value)">Copy</button>
     <br>
     <textarea id="htmlField"></textarea>
     <br><br>
 
     <label>Text</label>
+    <button id="textCopy" onclick="navigator.clipboard.writeText(outputField.innerText)">Copy</button>
     <section id="outputField"></section>
     <hr>
     <a href="/things/">&lt; Things</a>
