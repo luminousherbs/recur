@@ -9,6 +9,7 @@
     "german": ["transformation", "reversible"],
     "javascript": ["useful"],
     "shop": ["memory", "money"],
+    "to-do": ["useful"],
     "rules-for-robots": ["other"],
     "window": ["other"],
     "calculator": ["transformation", "useful", "reversible", "math"],
