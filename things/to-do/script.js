@@ -34,7 +34,7 @@ function getIndex() {
     return document.querySelectorAll("input").length;
 }
 
-function createItem() {
+function createItem(value = "") {
 
     // get index
     const index = getIndex();
@@ -45,6 +45,7 @@ function createItem() {
 
     // create text field
     const input = document.createElement("input");
+    input.value = value;
 
     // create space
     const space = document.createTextNode(" ");
@@ -64,13 +65,31 @@ function createItem() {
 
     // focus
     input.focus();
+
+    // listen to inputs so we can save them
+    input.addEventListener("input", save);
+    save();
     
 }
 
 function deleteItem(index) {
     document.querySelector(`[data-index="${index}"]`).remove();
     document.querySelector(`[data-index="${getIndex() - 1}"]`).firstChild.focus();
+    save();
 
+}
+
+function save() {
+    const toDoList = [];
+    for (let field of document.querySelectorAll("input")) {
+        toDoList.push(field.value);
+    }
+    localStorage.setItem("toDoList", toDoList.join("\n"));
+}
+
+function load() {
+    const list = (localStorage.toDoList ?? "").split("\n");
+    for (let item of list) createItem(item);
 }
 
 function onLoad() {
@@ -78,6 +97,8 @@ function onLoad() {
 
     // define elements
     container = document.getElementById("container");
+
+    load();
 }
 
 document.addEventListener("DOMContentLoaded", onLoad);
