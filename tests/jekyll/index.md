@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Jekyll
+title: Home
 ---
 
 ## test
