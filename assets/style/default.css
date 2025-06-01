@@ -1,9 +1,99 @@
 body {
-    background-color: #000000;
-    color: #FFFFFF;
     font-family: Nunito Sans, sans-serif;
     line-height: 1.5;
 }
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        color: #FFFFFF;
+        background-color: #000000;
+    }
+
+    aside {
+        border-color: #EEEEEE;
+        background-color: #333333;
+    }
+
+    section {
+        background-color: #222222;
+    }
+
+    textarea {
+        background-color: #222222;
+        color: #FFFFFF;
+    }
+
+    th, td {
+        border-color: #FFFFFF;
+    }
+
+    th {
+        background-color: #444444;
+    }
+
+    button:disabled {
+        background-color: #444444;
+        border-color: #000000;
+        color: #CCCCCC;
+    }
+
+    a:link {
+        color: #7EF984;
+    }
+
+    a:visited {
+        color: #EB80D9;
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+
+    body {
+        color: #000000;
+        background-color: #FFFFFF;
+    }
+
+    aside {
+        border-color: #111111;
+        background-color: #CCCCCC;
+    }
+
+    section {
+        background-color: #DDDDDD;
+    }
+
+    textarea {
+        background-color: #DDDDDD;
+        color: #000000;
+    }
+
+    th, td {
+        border-color: #000000;
+    }
+
+    th {
+        background-color: #BBBBBB;
+    }
+
+    button:disabled {
+        background-color: #777777;
+        border-color: #555555;
+        color: #CCCCCC;
+        cursor: not-allowed;
+    }
+
+    a:link {
+        color: #5ECE63;
+    }
+
+    a:visited {
+        color: #CD60BB;
+    }
+
+}
+
 
 
 
@@ -46,25 +136,20 @@ del {
 
 
 aside {
-    border-left: 5px solid #EEEEEE;
+    border-left: 5px solid;
     padding: 5px 5px 5px 9px;
     margin: 5px;
-    background-color: #333333;
     font-style: italic;
 }
 
 section {
     padding: 1px 5px 20px 15px;
     margin: 5px;
-    background-color: #222222;
-
 }
 
 textarea {
     width: 95%;
     height: auto;
-    background-color: #222222;
-    color: #FFFFFF;
 }
 
 
@@ -74,13 +159,9 @@ table {
 }
 
 th, td {
-    border: 1px solid white;
+    border: 1px solid;
     padding: 8px;
     text-align: left;
-}
-
-th {
-    background-color: #444444;
 }
 
 
@@ -94,31 +175,13 @@ button {
 }
 
 button:disabled {
-    background-color: #444444;
-    border-color: #000000;
-    border-style: solid;
-    border-width: 2px;
-    color: #CCCCCC;
-    cursor: not-allowed;
-    
+    cursor: not-allowed; 
 }
 
-
-
-a:link {
-    color: #7EF984;
-}
-
-a:visited {
-    color: #EB80D9;
-}
-
-a:hover {
-    color: #FAEC81;
-}
 
 
 
 input {
     font-family: Nunito Sans, sans-serif;
 }
+
