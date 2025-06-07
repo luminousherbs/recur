@@ -38,33 +38,7 @@ const shiftyExplanations = new Map([
 
 let fieldTemperature, fieldDoneness, image, imageIndex, submit, answer, explanation;
 
-const pageLocation = "things/shifty-scale";
 
-function downloadFile(filepath) {
-    const a = document.createElement("a");
-    a.href = filepath;
-    a.download = "";
-    a.hidden = true;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
-function edit() {
-    window.location.href = `https://github.com/luminousherbs/luminousherbs.github.io/tree/main/${pageLocation}`;
-}
-
-function share() {
-    navigator.share({url: window.location.href});
-}
-
-function downloadHTML() {
-    downloadFile("./index.html");
-}
-
-function downloadJavaScript() {
-    downloadFile("./script.js");
-}
 
 function flipMap(map) {
     const newMap = new Map();

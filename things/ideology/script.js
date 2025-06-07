@@ -1,33 +1,5 @@
 console.log("Hello world!");
 
-const pageLocation = "things/ideology/";
-
-function downloadFile(filepath) {
-    const a = document.createElement("a");
-    a.href = filepath;
-    a.download = "";
-    a.hidden = true;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
-function edit() {
-    window.location.href = `https://github.com/luminousherbs/luminousherbs.github.io/tree/main/${pageLocation}`;
-}
-
-function share() {
-    navigator.share({url: window.location.href});
-}
-
-function downloadHTML() {
-    downloadFile("./index.html");
-}
-
-function downloadJavaScript() {
-    downloadFile("./script.js");
-}
-
 const results = new Map([
     [0, new Map([[true, "public healthcare advocate"], [false, "private healthcare advocate"]])],
     [1, new Map([[true, "opposes gay marriage"], [false, "supports gay marriage"]])],
