@@ -19,5 +19,6 @@
     "day": ["joke"],
     "gamble": ["memory", "money"],
     "magpie-counter": ["transformation", "joke", "reversible"],
-    "shifty-scale": ["joke"]
+    "shifty-scale": ["joke"],
+    "tax": ["escalation", "memory", "money"]
 }
