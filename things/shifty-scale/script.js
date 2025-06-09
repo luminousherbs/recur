@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 const celsiusToDoneness = new Map([
     [46, "blue"],
@@ -98,29 +98,23 @@ function onSubmit() {
     postgame.hidden = false;
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+fieldDoneness = document.getElementById("field-doneness");
+fieldTemperature = document.getElementById("field-temperature");
 
-    // define elements
-    fieldDoneness = document.getElementById("field-doneness");
-    fieldTemperature = document.getElementById("field-temperature");
+fieldDoneness.addEventListener("input", onDonenessInput);
+fieldTemperature.addEventListener("input", onTemperatureInput);
 
-    fieldDoneness.addEventListener("input", onDonenessInput);
-    fieldTemperature.addEventListener("input", onTemperatureInput);
+image = document.getElementById("image");
+submit = document.getElementById("submit");
+next = document.getElementById("next");
+answer = document.getElementById("answer");
+explanation = document.getElementById("explanation");
+postgame = document.getElementById("postgame");
 
-    image = document.getElementById("image");
-    submit = document.getElementById("submit");
-    next = document.getElementById("next");
-    answer = document.getElementById("answer");
-    explanation = document.getElementById("explanation");
-    postgame = document.getElementById("postgame");
+submit.addEventListener("click", onSubmit);
+next.addEventListener("click", randomPhoto);
 
-    submit.addEventListener("click", onSubmit);
-    next.addEventListener("click", randomPhoto);
-    
 
-    randomPhoto();
+randomPhoto();
 
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);

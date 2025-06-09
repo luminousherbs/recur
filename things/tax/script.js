@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 const taxRate = 0.2;
 
@@ -20,8 +20,8 @@ function poorText() {
     return `You don't need to pay tax.`;
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+
+    
 
     // define elements
     const messageBox = document.getElementById("message");
@@ -44,5 +44,3 @@ function onLoad() {
         window.location.reload();
     })
 }
-
-document.addEventListener("DOMContentLoaded", onLoad);

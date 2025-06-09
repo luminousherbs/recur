@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let index = 0;
 let words;
@@ -38,15 +38,10 @@ function addWord(container, interval) {
     index++;
 }
 
-function onLoad() {
-    console.log("Page loaded!");
-    getText("words.txt").then((result) => {
-        words = result.split("\n");
-    })
+getText("words.txt").then((result) => {
+    words = result.split("\n");
+})
 
-    // define elements
-    const main = document.getElementById("main");
-    intervalId = startRepeat(intervalSpeed)
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+// define elements
+const main = document.getElementById("main");
+intervalId = startRepeat(intervalSpeed);

@@ -21,12 +21,6 @@ function onInput() {
 
 }
 
-function onLoad() {
-    console.log("Page loaded!")
-
-    // define elements
-    const inputField = document.getElementById("inputField");
-    const outputField = document.getElementById("outputField");
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+// define elements
+const inputField = document.getElementById("inputField");
+const outputField = document.getElementById("outputField");

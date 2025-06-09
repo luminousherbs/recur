@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let wordField, mathField, answerField;
 
@@ -200,18 +200,12 @@ function onAnswerInput() {
 }
 
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+wordField = document.getElementById("field-word");
+wordField.addEventListener("input", onWordInput);
 
-    // define elements
-    wordField = document.getElementById("field-word");
-    wordField.addEventListener("input", onWordInput);
+mathField = document.getElementById("field-math");
+mathField.addEventListener("input", onMathInput); /* should be a specialised function instead of `onInput` */
 
-    mathField = document.getElementById("field-math");
-    mathField.addEventListener("input", onMathInput); /* should be a specialised function instead of `onInput` */
-
-    answerField = document.getElementById("field-answer");
-    answerField.addEventListener("input", onAnswerInput); /* should be a specialised function instead of `onInput` */
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+answerField = document.getElementById("field-answer");
+answerField.addEventListener("input", onAnswerInput); /* should be a specialised function instead of `onInput` */

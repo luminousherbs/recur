@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let phoneContainer;
 
@@ -35,23 +35,16 @@ function displaySorted(collection, key) {
     }
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+phoneContainer = document.getElementById("phones");
+let stats;
 
-    // define elements
-    phoneContainer = document.getElementById("phones");
-    let stats;
-    
-    // get stats
-    getJSON("stats.json").then((res) => {
-        stats = res;
-        displaySorted(stats, "price");
-    })
+// get stats
+getJSON("stats.json").then((res) => {
+    stats = res;
+    displaySorted(stats, "price");
+})
 
-    document.getElementById("select").addEventListener("input", function() {
-        displaySorted(stats, document.getElementById("select").value)
-    })
-
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+document.getElementById("select").addEventListener("input", function() {
+    displaySorted(stats, document.getElementById("select").value)
+})

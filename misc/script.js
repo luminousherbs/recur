@@ -1,7 +1,5 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
-function onLoad() {
-    console.log("Page loaded!");
+
+    
 }
-
-document.addEventListener("DOMContentLoaded", onLoad);

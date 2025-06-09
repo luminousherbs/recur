@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let allTags;
 let pageTags;
@@ -78,15 +78,11 @@ function createLinkLayout(tags) {
     }
 }
 
-function onLoad() {
-    console.log("Page loaded!");
-    getJSON("/things/tags.json").then(result => {
-        pageTags = result;
-        createLinkLayout(result);
-        allTags = getUniqueElementsFromValueArrays(result);
-        createFilters(allTags);
-        filterPages();
-    })
-}
+getJSON("/things/tags.json").then(result => {
+    pageTags = result;
+    createLinkLayout(result);
+    allTags = getUniqueElementsFromValueArrays(result);
+    createFilters(allTags);
+    filterPages();
+})
 
-document.addEventListener("DOMContentLoaded", onLoad);

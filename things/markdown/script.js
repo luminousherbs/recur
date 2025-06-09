@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let input, output, html;
 
@@ -112,29 +112,21 @@ function onHtml() {
 
 }
 
+// define elements
+input = document.getElementById("inputField");
+output = document.getElementById("outputField");
+html = document.getElementById("htmlField");
 
-function onLoad() {
-    console.log("Page loaded!");
+// listen for events
+input.addEventListener("input", onInput);
+html.addEventListener("input", onHtml);
 
-    // define elements
-    input = document.getElementById("inputField");
-    output = document.getElementById("outputField");
-    html = document.getElementById("htmlField");
-    
-    // listen for events
-    input.addEventListener("input", onInput);
-    html.addEventListener("input", onHtml);
+// set default value
+input.value = defaultInput;
 
-    // set default value
-    input.value = defaultInput;
+// trigger display update
+onInput();
 
-    // trigger display update
-    onInput();
-
-    // this is required for some css reason
-    // it makes the page jump a bit but it's better than having a massive box
-    setTimeout(setHeights, 1)
-
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+// this is required for some css reason
+// it makes the page jump a bit but it's better than having a massive box
+setTimeout(setHeights, 1)

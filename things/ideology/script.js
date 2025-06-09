@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 const results = new Map([
     [0, new Map([[true, "public healthcare advocate"], [false, "private healthcare advocate"]])],
@@ -17,26 +17,19 @@ function getAnswers() {
     return answers
 }
 
+// define elements
+const questions = document.getElementById("questions");
+questions.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const answers = getAnswers();
+    let counter = 0;
+    for (a of answers) {
+        answers[counter] = results.get(counter).get(a)
+        counter++;
+    }
+    const template = `You are a ${answers[0]} who ${answers[1]} and ${answers[2]}.`
+    console.log(template);
+    document.getElementById("result").innerText = template;
+    document.getElementById("subresult").innerText = "Don't tie yourself to political ideologies. Think about each isssue individually.";
+})
 
-
-function onLoad() {
-    console.log("Page loaded!");
-
-    // define elements
-    const questions = document.getElementById("questions");
-    questions.addEventListener("submit", function(event) {
-        event.preventDefault();
-        const answers = getAnswers();
-        let counter = 0;
-        for (a of answers) {
-            answers[counter] = results.get(counter).get(a)
-            counter++;
-        }
-        const template = `You are a ${answers[0]} who ${answers[1]} and ${answers[2]}.`
-        console.log(template);
-        document.getElementById("result").innerText = template;
-        document.getElementById("subresult").innerText = "Don't tie yourself to political ideologies. Think about each isssue individually.";
-    })
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);

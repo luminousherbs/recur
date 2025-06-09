@@ -1,20 +1,14 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
-function onLoad() {
-    console.log("Page loaded!");
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    document.querySelector("form").addEventListener("submit", function(e) {
-        e.preventDefault();
+    window.confirm("Are you sure? This will kill the connection for all users.")
 
-        window.confirm("Are you sure? This will kill the connection for all users.")
-
-        fetch("/tools/kill-server/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: null,
-        })
-
+    fetch("/tools/kill-server/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: null,
     })
-}
 
-document.addEventListener("DOMContentLoaded", onLoad);
+})

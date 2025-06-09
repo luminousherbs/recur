@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let forward = true;
 
@@ -57,17 +57,13 @@ function onBackwardInput() {
     decodedField.value = caesarShift(encodedField.value, -+shiftField.value);
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+const decodedField = document.getElementById("decodedField");
+const encodedField = document.getElementById("encodedField");
+const shiftField   = document.getElementById("shiftField"  );
 
-    // define elements
-    const decodedField = document.getElementById("decodedField");
-    const encodedField = document.getElementById("encodedField");
-    const shiftField   = document.getElementById("shiftField"  );
+decodedField.addEventListener("input", onForwardInput);
+encodedField.addEventListener("input", onBackwardInput);
+shiftField  .addEventListener("input", onSlideInput);
 
-    decodedField.addEventListener("input", onForwardInput);
-    encodedField.addEventListener("input", onBackwardInput);
-    shiftField  .addEventListener("input", onSlideInput);
-}
 
-document.addEventListener("DOMContentLoaded", onLoad);

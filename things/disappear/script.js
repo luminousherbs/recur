@@ -1,5 +1,5 @@
 // "disappear" is hard to spell
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let count = 0;
 let clock;
@@ -38,12 +38,6 @@ function createClock() {
     clock = setInterval(tick, 1000);
 }
 
-function onLoad() {
-    console.log("The page has loaded!");
-    console.log(btn);
-    createClock();
-
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
 const btn = document.querySelector("#creator");
+console.log(btn);
+createClock();

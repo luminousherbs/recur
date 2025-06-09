@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 const prices = new Map([
     ["Strength Potion", 5],
@@ -46,16 +46,11 @@ function addCoin() {
     updateDisplay();
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+const output = document.getElementById("output");
+const itemsDisplay = document.getElementById("itemsDisplay")
+const getCoin = document.getElementById("getCoin");
+getCoin.addEventListener("click", addCoin);
+updateDisplay();
 
-    // define elements
-    const output = document.getElementById("output");
-    const itemsDisplay = document.getElementById("itemsDisplay")
-    const getCoin = document.getElementById("getCoin");
-    getCoin.addEventListener("click", addCoin);
-    updateDisplay();
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
 

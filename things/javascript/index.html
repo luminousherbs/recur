@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- javascript -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="/assets/scripts/toolbar.js"></script>
     <script src="/assets/scripts/tax.js"></script>
 
@@ -41,7 +41,7 @@
     <button onclick="downloadHTML()">Download HTML</button>
     <button onclick="downloadJavaScript()">Download JavaScript</button>
     <hr>
-    <textarea id="inputField">console.log("Hello world!");</textarea>
+    <textarea id="inputField">console.log(window.location.pathname);</textarea>
     <br>
     <button onclick="onInput()">Run</button>
     <pre><code id="outputField"></code></pre>

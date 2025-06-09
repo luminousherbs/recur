@@ -1,4 +1,4 @@
-console.log("Hello, world!");
+console.log(window.location.pathname);
 
 function getTextFromField() {
     const input = textField.value;
@@ -14,16 +14,9 @@ function getTextFromField() {
     output.innerHTML = formattedInput;
 }
 
-function onLoad() {
+// define elements
+const textField = document.getElementById("textField");
+const output = document.getElementById("output");
 
-    console.log("The page has loaded!");
-
-    // define elements
-    const textField = document.getElementById("textField");
-    const output = document.getElementById("output");
-
-    // listen for any change
-    textField.addEventListener("input", getTextFromField)
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+// listen for any change
+textField.addEventListener("input", getTextFromField);

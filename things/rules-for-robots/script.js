@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 function isRedirect() {
     return !!(getParameter("url"))
@@ -43,14 +43,9 @@ function onEnter() {
     }
 }
 
-function onLoad() {
-    console.log("Page loaded!");
-    if (!isRedirect()) {
-        const field = document.getElementById("field");
-        field.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") onEnter();
-        });
-    }
+if (!isRedirect()) {
+    const field = document.getElementById("field");
+    field.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") onEnter();
+    });
 }
-
-document.addEventListener("DOMContentLoaded", onLoad);

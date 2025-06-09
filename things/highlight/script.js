@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 colors = new Map([
     ["const", "lightgreen"],
@@ -52,15 +52,10 @@ function onInput() {
     updateText(input.value);
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+input = document.getElementById("input");
+output = document.getElementById("output");
+input.addEventListener("input", onInput)
 
-    // define elements
-    input = document.getElementById("input");
-    output = document.getElementById("output");
-    input.addEventListener("input", onInput)
+updateText(input.value);
 
-    updateText(input.value);
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);

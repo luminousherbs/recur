@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 const magpieConversion = new Map([
     [1, "sorrow"],
@@ -51,17 +51,11 @@ function onToggle() {
     lancashireMode = !lancashireMode;
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+numberField = document.getElementById("numberField");
+wordField = document.getElementById("wordField");
+lancashireModeField = document.getElementById("lancashireModeField");
 
-    // define elements
-    numberField = document.getElementById("numberField");
-    wordField = document.getElementById("wordField");
-    lancashireModeField = document.getElementById("lancashireModeField");
-
-    numberField.addEventListener("input", onNumberInput);
-    wordField.addEventListener("input", onWordInput);
-    lancashireModeField.addEventListener("input", onToggle);
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+numberField.addEventListener("input", onNumberInput);
+wordField.addEventListener("input", onWordInput);
+lancashireModeField.addEventListener("input", onToggle);

@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 // wouldn't need this if js didn't suck
 let fieldA, fieldB, fieldC, fieldXPositive, fieldXNegative; 
@@ -94,22 +94,15 @@ function solve(values) {
     }
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+fieldA = document.getElementById("field-a");
+fieldB = document.getElementById("field-b");
+fieldC = document.getElementById("field-c");
+fieldXPositive = document.getElementById("field-x-positive");
+fieldXNegative = document.getElementById("field-x-negative");
 
-    // define elements
-    fieldA = document.getElementById("field-a");
-    fieldB = document.getElementById("field-b");
-    fieldC = document.getElementById("field-c");
-    fieldXPositive = document.getElementById("field-x-positive");
-    fieldXNegative = document.getElementById("field-x-negative");
-
-    fieldA.addEventListener("input", questionInput);
-    fieldB.addEventListener("input", questionInput);
-    fieldC.addEventListener("input", questionInput);
-    fieldXPositive.addEventListener("input", answerInput);
-    fieldXNegative.addEventListener("input", answerInput);
-
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+fieldA.addEventListener("input", questionInput);
+fieldB.addEventListener("input", questionInput);
+fieldC.addEventListener("input", questionInput);
+fieldXPositive.addEventListener("input", answerInput);
+fieldXNegative.addEventListener("input", answerInput);

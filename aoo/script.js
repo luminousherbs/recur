@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let input, output;
 
@@ -34,15 +34,9 @@ function onInput() {
     ))
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+input = document.getElementById("input");
+output = document.getElementById("output");
+input.addEventListener("input", onInput);
 
-    // define elements
-    input = document.getElementById("input");
-    output = document.getElementById("output");
-    input.addEventListener("input", onInput);
-
-    onInput();
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+onInput();

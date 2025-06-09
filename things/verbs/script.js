@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 const verbs = new Map([
     // if english was a logical language, we wouldn't have to hardcode these, but alas.
@@ -50,13 +50,8 @@ function onOutputInput() {
     
 }
 
-function onLoad() {
-    console.log("Page loaded!");
-    // define elements
-    input = document.getElementById("inputField");
-    output = document.getElementById("outputField");
-    input.addEventListener("input", onInputInput);
-    output.addEventListener("input", onOutputInput);
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+// define elements
+input = document.getElementById("inputField");
+output = document.getElementById("outputField");
+input.addEventListener("input", onInputInput);
+output.addEventListener("input", onOutputInput);

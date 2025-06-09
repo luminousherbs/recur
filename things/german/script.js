@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let fieldTransliteration, fieldActual;
 
@@ -35,15 +35,9 @@ function onActualInput() {
     fieldTransliteration.value = substitute(fieldActual.value, flipMap(transliterationToActual));
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+fieldTransliteration = document.getElementById("field-transliteration");
+fieldActual = document.getElementById("field-actual");
 
-    // define elements
-    fieldTransliteration = document.getElementById("field-transliteration");
-    fieldActual = document.getElementById("field-actual");
-
-    fieldTransliteration.addEventListener("input", onTransliterationInput);
-    fieldActual.addEventListener("input", onActualInput);
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+fieldTransliteration.addEventListener("input", onTransliterationInput);
+fieldActual.addEventListener("input", onActualInput);

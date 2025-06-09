@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let count = 0;
 let clock;
@@ -56,10 +56,5 @@ function startClock() {
     clock = setInterval(tick, 1000);
 }
 
-function onLoad() {
-    console.log("The page has loaded!");
-    startClock();
+startClock();
 
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);

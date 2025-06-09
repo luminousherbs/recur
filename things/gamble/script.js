@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let gambleButton, moneyField, coinsField;
 
@@ -60,19 +60,13 @@ function updateDisplay() {
     coinsField.innerText = getCoins();
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+gambleButton = document.getElementById("gamble");
+moneyField = document.getElementById("money");
+coinsField = document.getElementById("coins");
 
-    // define elements
-    gambleButton = document.getElementById("gamble");
-    moneyField = document.getElementById("money");
-    coinsField = document.getElementById("coins");
+// define listeners
+gambleButton.addEventListener("click", onClick);
 
-    // define listeners
-    gambleButton.addEventListener("click", onClick);
-
-    // initialize
-    updateDisplay();
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+// initialize
+updateDisplay();

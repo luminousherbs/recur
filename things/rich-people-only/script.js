@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 function createPoorText() {
 
@@ -38,14 +38,9 @@ function isRich() {
     return getCoins() >= 100;
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+text = isRich() ? createRichText() : createPoorText();
 
-    text = isRich() ? createRichText() : createPoorText();
+// define elements
+const ruleEnd = document.getElementById("rule-end");
+ruleEnd.parentNode.insertBefore(text, ruleEnd);
 
-    // define elements
-    const ruleEnd = document.getElementById("rule-end");
-    ruleEnd.parentNode.insertBefore(text, ruleEnd);
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);

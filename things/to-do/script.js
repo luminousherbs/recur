@@ -1,4 +1,4 @@
-console.log("Hello world!");
+console.log(window.location.pathname);
 
 let container;
 
@@ -64,16 +64,10 @@ function load() {
     for (let item of list) createItem(item);
 }
 
-function onLoad() {
-    console.log("Page loaded!");
+// define elements
+container = document.getElementById("container");
 
-    // define elements
-    container = document.getElementById("container");
-
-    load();
-}
-
-document.addEventListener("DOMContentLoaded", onLoad);
+load();
 
 document.addEventListener("keydown", function(event) {
 
