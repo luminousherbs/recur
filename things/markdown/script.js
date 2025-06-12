@@ -8,6 +8,8 @@ const toggleables = new Map([
     ["__", ["<strong>", "</strong>"]],
     ["_", ["<em>", "</em>"]],
     ["~~", ["<del>", "</del>"]],
+    ["~", ["<sub>", "</sub>"]],
+    ["^", ["<sup>", "</sup>"]],
     ["```", ["<pre><code>", "</pre></code>"]],
     ["`", ["<code>", "</code>"]],
 ])
@@ -32,7 +34,8 @@ And here are some horizontal lines:
 ---
 ---
 ---
-> This is a blockquote.`;
+> This is a blockquote.
+You can also use ~subscript~ and ^superscript^.`;
 
 function replaceToggleables(text) {
     // loop for each tag
