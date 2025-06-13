@@ -1,7 +1,7 @@
 console.log(window.location.pathname);
 
 function changeTo(filename) {
-    document.getElementById("stylesheet").href = `/assets/style/${filename}.css`;
+    document.getElementById("stylesheet").href = `/assets/styles/${filename}.css`;
 }
 
 // define elements
