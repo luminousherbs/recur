@@ -8,6 +8,7 @@ for (let i of Object.values(instances)) {
     option.innerText = i.name;
     option.value = i.url;
     option.selected = (i.url === rootUrl);
+    console.log(i.url, rootUrl, i.url === rootUrl);
     instanceSelector.appendChild(option);
 }
 
