@@ -1,7 +1,12 @@
 import { instances } from "/instances.js";
 
-// if we're serving locally, then `location.hostname` returns "localhost", so we add ":8000" as well
-const rootUrl = location.hostname + (location.port ? `:${location.port}`: "");
+// if we're serving locally, then `location.hostname` returns "localhost", so we need to add ":8000" as well
+// if we're not serving locally, we need to add http://
+const rootUrl = (location.port ?
+    (location.hostname + ":" + location.port)
+    :
+    ("http://" + location.hostname)
+);
 
 for (let i of Object.values(instances)) {
     const option = document.createElement("option");
