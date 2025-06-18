@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 const prices = new Map([
     ["Strength Potion", 5],

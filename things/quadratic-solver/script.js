@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 // wouldn't need this if js didn't suck
 let fieldA, fieldB, fieldC, fieldXPositive, fieldXNegative; 

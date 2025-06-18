@@ -1,9 +1,9 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 document.querySelector("form").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    window.confirm("Are you sure? This will kill the connection for all users.")
+    confirm("Are you sure? This will kill the connection for all users.")
 
     fetch("/tools/kill-server/", {
         method: "POST",

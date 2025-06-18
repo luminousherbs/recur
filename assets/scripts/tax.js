@@ -21,7 +21,7 @@ if (
     &&
     (Math.random() < (1 / 5))
 ) {
-    if (window.confirm(message)) {
-        window.location.href = "/things/tax/";
+    if (confirm(message)) {
+        location.href = "/things/tax/";
     }
 }

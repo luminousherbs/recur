@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 const magpieConversion = new Map([
     [1, "sorrow"],

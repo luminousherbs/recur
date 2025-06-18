@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 const verbs = new Map([
     // if english was a logical language, we wouldn't have to hardcode these, but alas.

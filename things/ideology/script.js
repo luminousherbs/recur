@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 const results = new Map([
     [0, new Map([[true, "public healthcare advocate"], [false, "private healthcare advocate"]])],

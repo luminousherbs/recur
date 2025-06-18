@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- javascript -->
-    <script src="script.js" defer></script>
-    <script src="/assets/scripts/toolbar.js"></script>
-    <script src="/assets/scripts/tax.js"></script>
+    <script src="script.js" type="module" defer></script>
+    <script src="/assets/scripts/toolbar.js" type="module" defer></script>
+    <script src="/assets/scripts/tax.js" type="module" defer></script>
 
     <!-- stylesheet and fonts -->
     <link id="stylesheet" rel="stylesheet" href="/assets/styles/ai/default.css">
@@ -36,11 +36,12 @@
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
     <h1>AIs compete to redesign my CSS</h1>
-    <button onclick="editOnGitHub()">Edit on GitHub</button>
-    <button onclick="editOnCodeberg()">Edit on Codeberg</button>
+    <button onclick="edit()">Edit</button>
     <button onclick="share()">Share</button>
     <button onclick="downloadHTML()">Download HTML</button>
     <button onclick="downloadJavaScript()">Download JavaScript</button>
+    <br>
+    <p>Instance: <select id="instanceSelector"></select></p>
     <hr>
     <p>I asked five language models to redesign the CSS for this website. Here are the results.</p>
     <select id="dropdown">
@@ -74,7 +75,7 @@
 
     <p>Claude made the fewest changes, leaving my orginal code mostly unchanged. I really like the way it styled the textarea, and I might use it in my CSS in the future. My only complaint is that disabled buttons still light up when hovered.</p>
 
-    <p>Every single model chose to leave no margin between the text and the edge of the window. I have no idea why, since almost all websites include a margin. My only guess is that the absence of an explicitly defined margin in my original CSS caused the AIs to forget they needed to define one.</p>
+    <p>Every single model chose to leave no margin between the text and the edge of the  I have no idea why, since almost all websites include a margin. My only guess is that the absence of an explicitly defined margin in my original CSS caused the AIs to forget they needed to define one.</p>
 
     <aside>
         <p>i cant be bothered to write anything else so thats all. have a look at the example elements below if you want.</p>

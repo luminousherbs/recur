@@ -28,7 +28,7 @@
 <!-- <script
   data-goatcounter="https://todepond.goatcounter.com/count"
   async
-  src="//gc.zgo.at/count.js"></script> -->
+  src="//gc.zgo.at/count.js" type="module" defer></script> -->
 
 <!----------------------------------------------------->
 <!--------------- user interface stuff ---------------->
@@ -452,7 +452,7 @@
   }
 
   function renderUserStatuses(entries) {
-    const currentHash = window.location.hash;
+    const currentHash = location.hash;
     const main = document.querySelector("main");
     const statuses = document.querySelectorAll(".status");
     let s = 0;
@@ -582,7 +582,7 @@
 
     // return to hash
     if (currentHash) {
-      window.location.hash = currentHash;
+      location.hash = currentHash;
     }
   }
 
@@ -712,7 +712,7 @@
         let foundName = "";
         for (const name of nameSet) {
           if (snippet === name) {
-            result = `<a onclick="window.targetyo()" href="#post-${name}" class="at-${name} name-${name} at">@${name}</a>`;
+            result = `<a onclick="targetyo()" href="#post-${name}" class="at-${name} name-${name} at">@${name}</a>`;
             // i += name.length + 1;
             foundName = name;
             found = true;
@@ -735,7 +735,7 @@
             greedySnippet.startsWith(name + ",") ||
             greedySnippet.startsWith(name + "?")
           ) {
-            result = `<a onclick="window.targetyo()" href="#post-${name}" class="at-${name} name-${name} at">@${name}</a>`;
+            result = `<a onclick="targetyo()" href="#post-${name}" class="at-${name} name-${name} at">@${name}</a>`;
             // i += name.length + 1;
             found = true;
             foundName = name;
@@ -833,13 +833,13 @@
   );
   renderUserStatuses(parsedLocalStatuses);
 
-  const urlQuery = new URLSearchParams(window.location.search);
+  const urlQuery = new URLSearchParams(location.search);
   if (urlQuery.has("logout")) {
     // remove the query from the url
-    window.history.replaceState({}, "", PAGE_PATH);
+    history.replaceState({}, "", PAGE_PATH);
   } else if (urlQuery.has("delete")) {
     // remove the query from the url
-    window.history.replaceState({}, "", PAGE_PATH);
+    history.replaceState({}, "", PAGE_PATH);
     passwordInput.value = "";
     usernameInput.value = "";
   } else if (
@@ -931,12 +931,12 @@
   addEventListener("pointerdown", (event) => {
     // clear anchor from url, eg: #post-TodePond
     // but don't navigate or anything.
-    window.history.replaceState({}, "", PAGE_PATH);
+    history.replaceState({}, "", PAGE_PATH);
 
     document.body.classList.add("untarget");
   });
 
-  window.targetyo = () => {
+  targetyo = () => {
     document.body.classList.remove("untarget");
   };
 </script>

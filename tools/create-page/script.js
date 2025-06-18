@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 document.querySelector("form").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -17,7 +17,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
                 alert(data.error);
             })
         } else {
-            window.location.href = `/${userPagePath}`;
+            location.href = `/${userPagePath}`;
         }
     });
 

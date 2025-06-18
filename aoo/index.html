@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- javascript -->
-    <script src="script.js" defer></script>
-    <script src="/assets/scripts/toolbar.js"></script>
-    <script src="/assets/scripts/tax.js"></script>
+    <script src="script.js" type="module" defer></script>
+    <script src="/assets/scripts/toolbar.js" type="module" defer></script>
+    <script src="/assets/scripts/tax.js" type="module" defer></script>
 
     <!-- stylesheet and fonts -->
     <link rel="stylesheet" href="/assets/styles/default.css">
@@ -30,11 +30,12 @@
     </noscript>
     <h1>aoo</h1>
     <p>It's just like Mastodon but with only the vowels</p>
-    <button onclick="editOnGitHub()">Edit on GitHub</button>
-    <button onclick="editOnCodeberg()">Edit on Codeberg</button>
+    <button onclick="edit()">Edit</button>
     <button onclick="share()">Share</button>
     <button onclick="downloadHTML()">Download HTML</button>
     <button onclick="downloadJavaScript()">Download JavaScript</button>
+    <br>
+    <p>Instance: <select id="instanceSelector"></select></p>
     <hr>
     <input id="input" value="https://mas.to/@Svenlaa/114331779878771233">
     <aside id="output"></aside>

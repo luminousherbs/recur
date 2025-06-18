@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 const celsiusToDoneness = new Map([
     [46, "blue"],

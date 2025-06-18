@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 function isRedirect() {
     return !!(getParameter("url"))
@@ -6,7 +6,7 @@ function isRedirect() {
 
 function removeParameter(key) {
     // get the current url
-    const url = new URL(window.location.href);
+    const url = new URL(location.href);
 
     // delete the parameter
     url.searchParams.delete(key);
@@ -14,7 +14,7 @@ function removeParameter(key) {
 
 function getParameter(key) {
     // get the current url
-    const url = new URL(window.location.href);
+    const url = new URL(location.href);
 
     // get the parameter
     const parameter = url.searchParams.get(key);
@@ -23,13 +23,13 @@ function getParameter(key) {
 
 function setParameter(key, value) {
     // get the current url
-    const url = new URL(window.location.href);
+    const url = new URL(location.href);
 
     // set the parameter
     url.searchParams.set(key, value);
 
     // who knows what this does
-    window.history.pushState({}, "", url);
+    history.pushState({}, "", url);
 
     return;
 }
@@ -37,7 +37,7 @@ function setParameter(key, value) {
 function onEnter() {
     setParameter("url", field.value);
     if (isRedirect()) {
-        window.location.replace(`${getParameter("url")}/robots.txt`, "_self");
+        location.replace(`${getParameter("url")}/robots.txt`, "_self");
     } else {
         removeParameter("url");
     }

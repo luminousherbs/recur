@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 function getTextFromField() {
     const input = textField.value;

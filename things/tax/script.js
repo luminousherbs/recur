@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 const taxRate = 0.2;
 
@@ -41,6 +41,6 @@ function poorText() {
             localStorage.coins = coins() - calculateTax(coins());
             alert("Your tax has been paid successfully.");
         }
-        window.location.reload();
+        location.reload();
     })
 }

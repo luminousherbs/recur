@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 async function getJSON(url) {
     const response = await fetch(url);

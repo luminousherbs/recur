@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 function changeTo(filename) {
     document.getElementById("stylesheet").href = `/assets/styles/${filename}.css`;

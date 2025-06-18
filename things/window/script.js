@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 let urlField, heightField, widthField, frame;
 
@@ -20,8 +20,8 @@ widthField.addEventListener("input", onInput);
 heightField.addEventListener("input", onInput);
 
 // set starting width based on available width
-widthField.value = window.innerWidth * 0.7;
-heightField.value = window.innerHeight * 0.7;
+widthField.value = innerWidth * 0.7;
+heightField.value = innerHeight * 0.7;
 
 // trigger input
 onInput();

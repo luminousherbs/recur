@@ -1,5 +1,5 @@
 // "disappear" is hard to spell
-console.log(window.location.pathname);
+console.log(location.pathname);
 
 let count = 0;
 let clock;
