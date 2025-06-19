@@ -19,7 +19,7 @@ export const instances = {
     },
 
     "localhost:8000": {
-        url: "localhost:8000",
+        url: "http://localhost:8000",
         name: "Localhost",
         admin: null,
         edit: function(path) {

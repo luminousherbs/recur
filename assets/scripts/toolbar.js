@@ -2,10 +2,10 @@ import { instances } from "/instances.js";
 
 // if we're serving locally, then `location.hostname` returns "localhost", so we need to add ":8000" as well
 // if we're not serving locally, we need to add http://
-const rootUrl = (location.port ?
+const rootUrl = "http://" + (location.port ?
     (location.hostname + ":" + location.port)
     :
-    ("http://" + location.hostname)
+    (/* "http://" + */ location.hostname)
 );
 
 for (let i of Object.values(instances)) {
