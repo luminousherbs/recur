@@ -20,27 +20,23 @@ function poorText() {
     return `You don't need to pay tax.`;
 }
 
+// define elements
+const messageBox = document.getElementById("message");
+const button = document.getElementById("submit");
 
-    
-
-    // define elements
-    const messageBox = document.getElementById("message");
-    const button = document.getElementById("submit");
-
-    // logic
-    if (coins() >= 250) {
-        messageBox.innerText = richText();
-        button.disabled = false;
-    } else {
-        messageBox.innerText = poorText();
-        button.disabled = true;
-    }
-
-    button.addEventListener("click", function() {
-        if (coins() >= 250) {
-            localStorage.coins = coins() - calculateTax(coins());
-            alert("Your tax has been paid successfully.");
-        }
-        location.reload();
-    })
+// logic
+if (coins() >= 250) {
+    messageBox.innerText = richText();
+    button.disabled = false;
+} else {
+    messageBox.innerText = poorText();
+    button.disabled = true;
 }
+
+button.addEventListener("click", function() {
+    if (coins() >= 250) {
+        localStorage.coins = coins() - calculateTax(coins());
+        alert("Your tax has been paid successfully.");
+    }
+    location.reload();
+})
