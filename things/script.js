@@ -3,6 +3,20 @@ console.log(location.pathname);
 let allTags;
 let pageTags;
 
+function filterPages() {
+    const allowedPages = new Set();
+    const choice = getFilterChoice(allTags);
+    for (const [key, value] of Object.entries(pageTags)) {
+        for (const c of choice.keys()) {
+            if (choice.get(c) && value.includes(c)) allowedPages.add(key);
+        }
+    }
+    for (const [key, value] of Object.entries(pageTags)) {
+        document.getElementById(`link-${key}`).hidden = !allowedPages.has(key);
+    }
+}
+window.filterPages = filterPages;
+
 function selectAll(id) {
    const container = document.getElementById(id);
    for (let box of container.querySelectorAll("input")) box.checked = true;
@@ -52,22 +66,6 @@ function createFilters(filters) {
     for (let f of filters) {
         filterBox.innerHTML += `<input type="checkbox" id="filter-${f}" onclick="filterPages()" checked>`;
         filterBox.innerHTML += `<label for="filter-${f}">${f}</label><br>`;
-        document.getElementById(`filter-${f}`).addEventListener("change", function() {
-            console.log("DDDDDD")
-        })
-    }
-}
-
-function filterPages() {
-    allowedPages = new Set();
-    const choice = getFilterChoice(allTags);
-    for (const [key, value] of Object.entries(pageTags)) {
-        for (const c of choice.keys()) {
-            if (choice.get(c) && value.includes(c)) allowedPages.add(key);
-        }
-    }
-    for (const [key, value] of Object.entries(pageTags)) {
-        document.getElementById(`link-${key}`).hidden = !allowedPages.has(key);
     }
 }
 

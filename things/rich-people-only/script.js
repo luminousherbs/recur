@@ -38,9 +38,8 @@ function isRich() {
     return getCoins() >= 100;
 }
 
-text = isRich() ? createRichText() : createPoorText();
+const text = isRich() ? createRichText() : createPoorText();
 
 // define elements
 const ruleEnd = document.getElementById("rule-end");
 ruleEnd.parentNode.insertBefore(text, ruleEnd);
-
