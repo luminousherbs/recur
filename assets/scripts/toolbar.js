@@ -2,11 +2,13 @@ import { instances } from "/instances.js";
 
 // if we're serving locally, then `location.hostname` returns "localhost", so we need to add ":8000" as well
 // if we're not serving locally, we need to add http://
-const rootUrl = "http://" + (location.port ?
+const rootUrl = (location.port ?
     (location.hostname + ":" + location.port)
     :
     (/* "http://" + */ location.hostname)
 );
+
+console.log(rootUrl, instances[rootUrl]);
 
 for (let i of Object.values(instances)) {
     const option = document.createElement("option");
@@ -20,6 +22,8 @@ instanceSelector.addEventListener("input", function() {
     const destination = instanceSelector.value;
     instanceSelector.value = rootUrl;
     location.href = (
+        "http://"
+        +
         destination
         +
         location.pathname
