@@ -21,6 +21,7 @@ for (let i of Object.values(instances)) {
 instanceSelector.addEventListener("input", function() {
     const destination = instanceSelector.value;
     instanceSelector.value = rootUrl;
+    console.log(destination + location.pathname);
     location.href = (
         "http://"
         +
