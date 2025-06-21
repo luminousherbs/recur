@@ -8,7 +8,8 @@ const rootUrl = (location.port ?
     (/* "http://" + */ location.hostname)
 );
 
-source.href = instances[rootUrl].source;
+const source = document.getElementById("source");
+if (source) source.href = instances[rootUrl].source;
 
 for (let i of Object.values(instances)) {
     const option = document.createElement("option");

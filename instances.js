@@ -24,7 +24,7 @@ export const instances = {
         url: "http://localhost:8000",
         name: "Localhost",
         admin: null,
-        source: "http://example.com",
+        source: "tools/",
         edit: function(path) {
             alert("just edit it yourself");
             return location.href;
