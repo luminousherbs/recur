@@ -20,12 +20,7 @@ instanceSelector.addEventListener("input", function() {
     const destination = instanceSelector.value;
     instanceSelector.value = rootUrl;
     console.log(destination + location.pathname);
-    location.href = (
-/*         "http://"
-        + */
-        destination
-        +
-        location.pathname
+    location.href = (destination + location.pathname
     );
 })
 
