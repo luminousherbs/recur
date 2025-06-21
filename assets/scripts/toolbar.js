@@ -8,14 +8,10 @@ const rootUrl = "http://" + (location.port ?
     (/* "http://" + */ location.hostname)
 );
 
-console.log(rootUrl, instances[rootUrl]);
-
 for (let i of Object.values(instances)) {
     const option = document.createElement("option");
     option.innerText = i.name;
     option.value = i.url;
-    alert(i.url);
-    alert(rootUrl);
     option.selected = (i.url === rootUrl);
     instanceSelector.appendChild(option);
 }
