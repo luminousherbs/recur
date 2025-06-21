@@ -14,7 +14,7 @@ for (let i of Object.values(instances)) {
     const option = document.createElement("option");
     option.innerText = i.name;
     option.value = i.url;
-    console.log(i.url, rootUrl, i.url === rootUrl);
+    alert(i.url, rootUrl, i.url === rootUrl);
     option.selected = (i.url === rootUrl);
     instanceSelector.appendChild(option);
 }
