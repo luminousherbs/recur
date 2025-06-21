@@ -2,7 +2,7 @@ import { instances } from "/instances.js";
 
 // if we're serving locally, then `location.hostname` returns "localhost", so we need to add ":8000" as well
 // if we're not serving locally, we need to add http://
-const rootUrl = (location.port ?
+const rootUrl = "http://" + (location.port ?
     (location.hostname + ":" + location.port)
     :
     (/* "http://" + */ location.hostname)
@@ -14,6 +14,7 @@ for (let i of Object.values(instances)) {
     const option = document.createElement("option");
     option.innerText = i.name;
     option.value = i.url;
+    console.log(i.url, rootUrl, i.url === rootUrl);
     option.selected = (i.url === rootUrl);
     instanceSelector.appendChild(option);
 }
