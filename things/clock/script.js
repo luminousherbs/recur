@@ -8,21 +8,8 @@ let freezeCount = 0;
 let clickFrozen = false;
 let clickFrozenCount = false;
 
-function freezeClicking() {
-    if (clickFrozen) {
-        return false;
-    } else {
-        clickFrozen = true;
-        const freezeClickingButton = document.getElementById("freezeClicking");
-        freezeClickingButton.innerText = "Unfreeze clicking";
-        freezeClickingButton.disabled = true;
-        document.getElementById("freeze").disabled = true;
-    }
-}
-
 function freeze() {
-    if (clickFrozen) {return false};
-    const freezeButton = document.getElementById("freeze");
+    if (clickFrozen) return false;
 
     if (frozen) {
 
@@ -37,16 +24,27 @@ function freeze() {
         clearInterval(clock);
 
         freezeCount++;
-        const displayFreezes = document.getElementById("displayFreezes");
         displayFreezes.innerText = `You've frozen time ${freezeCount} times.`;
 
     }
 
     return true;
 }
+window.freeze = freeze;
+
+function freezeClicking() {
+    if (clickFrozen) return false;
+    
+    clickFrozen = true;
+    const freezeClickingButton = document.getElementById("freezeClicking");
+    freezeClickingButton.innerText = "Unfreeze clicking";
+    freezeClickingButton.disabled = true;
+    freezeButton.disabled = true;
+    
+}
+window.freezeClicking = freezeClicking;
 
 function tick() {
-    console.log("tick");
     count++;
     const displayTime = document.getElementById("displayTime");
     displayTime.innerText = `You've been looking at this page for ${count} seconds.`;
@@ -57,4 +55,3 @@ function startClock() {
 }
 
 startClock();
-
