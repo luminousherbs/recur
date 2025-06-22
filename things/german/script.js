@@ -1,7 +1,5 @@
 console.log(location.pathname);
 
-let fieldTransliteration, fieldActual;
-
 const transliterationToActual = new Map([
     ["ae", "ä"],
     ["oe", "ö"],
@@ -28,16 +26,13 @@ function substitute(str, map) {
 }
 
 function onTransliterationInput() {
-    fieldActual.value = substitute(fieldTransliteration.value, transliterationToActual);
+    actualField.value = substitute(transliterationField.value, transliterationToActual);
 }
 
 function onActualInput() {
-    fieldTransliteration.value = substitute(fieldActual.value, flipMap(transliterationToActual));
+    transliterationField.value = substitute(actualField.value, flipMap(transliterationToActual));
 }
 
-// define elements
-fieldTransliteration = document.getElementById("field-transliteration");
-fieldActual = document.getElementById("field-actual");
-
-fieldTransliteration.addEventListener("input", onTransliterationInput);
-fieldActual.addEventListener("input", onActualInput);
+// listen for inputs
+transliterationField.addEventListener("input", onTransliterationInput);
+actualField         .addEventListener("input", onActualInput         );
