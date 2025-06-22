@@ -42,9 +42,9 @@ function onEnter() {
         removeParameter("url");
     }
 }
+window.onEnter = onEnter;
 
 if (!isRedirect()) {
-    const field = document.getElementById("field");
     field.addEventListener("keydown", (event) => {
         if (event.key === "Enter") onEnter();
     });
