@@ -22,12 +22,14 @@ function selectAll(id) {
    for (let box of container.querySelectorAll("input")) box.checked = true;
    filterPages();
 }
+window.selectAll = selectAll;
 
 function selectNone(id) {
     const container = document.getElementById(id);
     for (let box of container.querySelectorAll("input")) box.checked = false;
     filterPages();
 }
+window.selectNone = selectNone;
 
 function selectSome(id) {
     const container = document.getElementById(id);
@@ -36,6 +38,7 @@ function selectSome(id) {
     for (let box of container.querySelectorAll("input")) box.checked = (Math.random() > 0.5);
     filterPages();
 }
+window.selectSome = selectSome;
 
 async function getJSON(url) {
     const response = await fetch(url);
