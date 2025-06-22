@@ -1,6 +1,6 @@
 console.log("Hello world!")
 
-function onInput() {
+function runCode() {
     const inputText = inputField.value;
     let outputText = []
     let originalLog = console.log
@@ -20,7 +20,4 @@ function onInput() {
     outputField.innerText = outputText.join("\n");
 
 }
-
-// define elements
-const inputField = document.getElementById("inputField");
-const outputField = document.getElementById("outputField");
+window.runCode = runCode;
