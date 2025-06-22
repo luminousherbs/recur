@@ -57,13 +57,7 @@ function onBackwardInput() {
     decodedField.value = caesarShift(encodedField.value, -+shiftField.value);
 }
 
-// define elements
-const decodedField = document.getElementById("decodedField");
-const encodedField = document.getElementById("encodedField");
-const shiftField   = document.getElementById("shiftField"  );
-
-decodedField.addEventListener("input", onForwardInput);
+// listen for input
+decodedField.addEventListener("input", onForwardInput );
 encodedField.addEventListener("input", onBackwardInput);
-shiftField  .addEventListener("input", onSlideInput);
-
-
+shiftField  .addEventListener("input", onSlideInput   );
