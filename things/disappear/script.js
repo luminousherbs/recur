@@ -1,5 +1,5 @@
-// "disappear" is hard to spell
 console.log(location.pathname);
+// "disappear" is hard to spell
 
 let count = 0;
 let clock;
@@ -13,18 +13,15 @@ function button() {
     const newDiv = document.createElement("p");
     newDiv.innerText = "I'm about to be sacrificed!";
     newDiv.class = "";
-    console.log(newDiv);
-    sacrificialTextContainer = document.getElementById("sacrificialTextContainer");
     sacrificialTextContainer.appendChild(newDiv);
 }
+window.button = button;
 
 function tick() {
-    console.log("tick");
     count++;
 
-    // get every items
-    items = document.querySelectorAll("*");
-    console.log(items);
+    // get every item on the page
+    const items = document.querySelectorAll("*");
 
     // get the last item in the list
     let last = items[items.length - 1];
@@ -39,5 +36,4 @@ function createClock() {
 }
 
 const btn = document.querySelector("#creator");
-console.log(btn);
 createClock();
