@@ -1,7 +1,7 @@
 console.log(location.pathname);
 
 // wouldn't need this if js didn't suck
-let fieldA, fieldB, fieldC, fieldXPositive, fieldXNegative; 
+// let fieldA, fieldB, fieldC, fieldXPositive, fieldXNegative; 
 
 function questionInput() {
     const res = solve({a: fieldA.value, b: fieldB.value, c: fieldC.value});
@@ -94,13 +94,7 @@ function solve(values) {
     }
 }
 
-// define elements
-fieldA = document.getElementById("field-a");
-fieldB = document.getElementById("field-b");
-fieldC = document.getElementById("field-c");
-fieldXPositive = document.getElementById("field-x-positive");
-fieldXNegative = document.getElementById("field-x-negative");
-
+// listen for inputs
 fieldA.addEventListener("input", questionInput);
 fieldB.addEventListener("input", questionInput);
 fieldC.addEventListener("input", questionInput);
