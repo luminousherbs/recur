@@ -6,7 +6,7 @@ const verbs = new Map([
     ["my", "her"], /* not technically a verb but i dont want to rename it */
     ["me", "her"], /* not technically a verb but i dont want to rename it */
     ["mine", "hers"], /* not technically a verb but i dont want to rename it */
-    ["am", "are"],
+    ["am", "is"],
     ["have", "has"],
     ["do", "does"],
     ["know", "knows"],
@@ -16,7 +16,7 @@ const verbs = new Map([
     ["want", "wants"],
     ["see", "sees"],
     ["make", "makes"],
-    ["want", "wants"],
+    ["mean", "means"],
 ])
 
 function flipMap(map) {
@@ -26,8 +26,6 @@ function flipMap(map) {
     }
     return newMap;
 }
-
-let input, output;
 
 function onInputInput() {
     output.value = "";
@@ -50,8 +48,6 @@ function onOutputInput() {
     
 }
 
-// define elements
-input = document.getElementById("inputField");
-output = document.getElementById("outputField");
+// listen for inputs
 input.addEventListener("input", onInputInput);
 output.addEventListener("input", onOutputInput);

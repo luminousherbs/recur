@@ -13,7 +13,6 @@
     "rules-for-robots": ["other"],
     "window": ["other"],
     "calculator": ["transformation", "useful", "reversible", "math"],
-    "verbs": ["transformation"],
     "rich-people-only": ["memory", "money"],
     "markdown": ["transformation", "useful"],
     "day": ["joke"],
