@@ -36,26 +36,22 @@ function flipMap(map) {
     return newMap;
 }
 
-let numberField, wordField, lancashireModeField;
 let lancashireMode = false;
 
 function onNumberInput() {
-    wordField.value = (lancashireMode ? magpieConversionLancashire : magpieConversion).get(+numberField.value) || "";
+    wordField.value = (lancashireMode ? magpieConversionLancashire : magpieConversion).get(+numberField.value) ?? "";
 }
 
 function onWordInput() {
-    numberField.value = flipMap(lancashireMode ? magpieConversionLancashire : magpieConversion).get(wordField.value) || "";
+    numberField.value = flipMap(lancashireMode ? magpieConversionLancashire : magpieConversion).get(wordField.value) ?? "";
 }
 
 function onToggle() {
     lancashireMode = !lancashireMode;
+    (numberField.value ? onNumberInput: onWordInput)();
 }
 
-// define elements
-numberField = document.getElementById("numberField");
-wordField = document.getElementById("wordField");
-lancashireModeField = document.getElementById("lancashireModeField");
-
-numberField.addEventListener("input", onNumberInput);
-wordField.addEventListener("input", onWordInput);
-lancashireModeField.addEventListener("input", onToggle);
+// listen for inputs
+numberField        .addEventListener("input", onNumberInput);
+wordField          .addEventListener("input", onWordInput  );
+lancashireModeField.addEventListener("input", onToggle     );
