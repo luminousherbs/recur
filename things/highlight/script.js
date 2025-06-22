@@ -26,8 +26,6 @@ colors = new Map([
     
 ])
 
-let input, output;
-
 function updateText(text) {
     let newText = "";
     for (let word of text.replaceAll("\n", " <br> ").split(" ")) {
@@ -52,10 +50,7 @@ function onInput() {
     updateText(input.value);
 }
 
-// define elements
-input = document.getElementById("input");
-output = document.getElementById("output");
+// listen for inputs
 input.addEventListener("input", onInput)
 
 updateText(input.value);
-
