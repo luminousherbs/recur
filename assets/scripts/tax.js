@@ -17,7 +17,7 @@ const message = `You have too much money! You must submit your tax return by ${n
 
 
 if (
-    (+localStorage.coins >= 250)
+    (+localStorage.coins >= 500)
     &&
     (Math.random() < (1 / 5))
 ) {
