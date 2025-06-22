@@ -1,7 +1,5 @@
 console.log(location.pathname);
 
-let gambleButton, moneyField, coinsField;
-
 function getCoins() {
     return +localStorage.getItem("coins") ?? 0;
 }
@@ -60,12 +58,7 @@ function updateDisplay() {
     coinsField.innerText = getCoins();
 }
 
-// define elements
-gambleButton = document.getElementById("gamble");
-moneyField = document.getElementById("money");
-coinsField = document.getElementById("coins");
-
-// define listeners
+// listen for clicks
 gambleButton.addEventListener("click", onClick);
 
 // initialize
