@@ -1,7 +1,5 @@
 console.log(location.pathname);
 
-let input, output, html;
-
 const toggleables = new Map([
     ["**", ["<strong>", "</strong>"]],
     ["*", ["<em>", "</em>"]],
@@ -60,10 +58,10 @@ function replaceToggleables(text) {
 }
 
 function replaceLineEffects(text) {
-    lines = text.split("\n");
+    const lines = text.split("\n");
     let newText = "";
     for (let l of lines) {
-        newl = l;
+        let newl = l;
         for (let e of lineEffects.keys()) {
             if (l.startsWith(e)) {
                 // surround the line with the relevant opening and closing tags
@@ -93,6 +91,7 @@ function onInput() {
     setHeights();
 
     // convert markdown to html
+    let text;
     text = replaceLineEffects(input.value);
     text = replaceToggleables(text);
 
@@ -115,14 +114,9 @@ function onHtml() {
 
 }
 
-// define elements
-input = document.getElementById("inputField");
-output = document.getElementById("outputField");
-html = document.getElementById("htmlField");
-
-// listen for events
+// listen for inputs
 input.addEventListener("input", onInput);
-html.addEventListener("input", onHtml);
+html .addEventListener("input", onHtml );
 
 // set default value
 input.value = defaultInput;
@@ -132,4 +126,4 @@ onInput();
 
 // this is required for some css reason
 // it makes the page jump a bit but it's better than having a massive box
-setTimeout(setHeights, 1)
+setTimeout(setHeights, 1);
