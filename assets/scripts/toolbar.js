@@ -1,12 +1,7 @@
 import { instances } from "/instances.js";
 
 // if we're serving locally, then `location.hostname` returns "localhost", so we need to add ":8000" as well
-// if we're not serving locally, we need to add http://
-const rootUrl = (location.port ?
-    (location.hostname + ":" + location.port)
-    :
-    (/* "http://" + */ location.hostname)
-);
+const rootUrl = location.hostname + (location.port ? ":" + location.port: "");
 
 const source = document.getElementById("source");
 if (source) source.href = instances[rootUrl].source;
