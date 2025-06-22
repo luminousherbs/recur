@@ -38,8 +38,6 @@ function isRich() {
     return getCoins() >= 100;
 }
 
+// determine what text to use and insert it before the <hr>
 const text = isRich() ? createRichText() : createPoorText();
-
-// define elements
-const ruleEnd = document.getElementById("rule-end");
-ruleEnd.parentNode.insertBefore(text, ruleEnd);
+end.parentNode.insertBefore(text, end);
