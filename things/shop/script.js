@@ -18,6 +18,7 @@ function buy(item) {
     localStorage.setItem(item, Number(localStorage.getItem(item)) + 1);
     updateDisplay();
 }
+window.buy = buy;
 
 function updateDisplay() {
     output.innerText = `You have ${getCoins()} coins.`
@@ -27,6 +28,7 @@ function updateDisplay() {
     })
     updateAffordable();
 }
+window.updateDisplay = updateDisplay;
 
 function updateAffordable() {
     prices.forEach(function(value, key) {
@@ -46,10 +48,7 @@ function addCoin() {
     updateDisplay();
 }
 
-// define elements
-const output = document.getElementById("output");
-const itemsDisplay = document.getElementById("itemsDisplay")
-const getCoin = document.getElementById("getCoin");
+// define elementS
 getCoin.addEventListener("click", addCoin);
 updateDisplay();
 
