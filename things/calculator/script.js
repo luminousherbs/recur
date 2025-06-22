@@ -1,7 +1,5 @@
 console.log(location.pathname);
 
-let wordField, mathField, answerField;
-
 const wordToMath = new Map([
     ["by", ""],
     ["to", ""],
@@ -31,6 +29,7 @@ const wordToMath = new Map([
     ["twelve", "12"],
     ["thirteen", "13"],
     ["fifteen", "15"],
+    ["eighteen", "18"],
     ["twenty", "20"],
     ["thirty", "30"],
     ["forty", "40"],
@@ -54,6 +53,7 @@ const wordToMath = new Map([
     ["to the power of", "**"],
     ["squared", "** 2"],
     ["cubed", "** 3"],
+    ["percent", "/ 100"],
 ])
 
 function flipMap(map) {
@@ -101,11 +101,6 @@ function convertWordToMath(words) {
         }
     }
     return newWords;
-    // newWords = substitute(words, wordToMath);
-    // for (let w of words) {
-    //     if (w.contains("teen")) {newWords.push(wordToMath.get(w.replace("teen", "")) - - 10)}
-    //     else if (w.contains("ty")) {newWords.push(wordToMath.get(w.replace("ty", "")) * 10)}
-    // }
 }
 
 function convertMathToWord(math) {
@@ -113,12 +108,9 @@ function convertMathToWord(math) {
     const map = flipMap(wordToMath);
     for (let m of math) {
 
-        // skip empty strings
-        /* if (m === "") {
-            newWords.push("")
 
         // if the math is in the map,
-        } else  */if (map.get(''+ m)) {
+        if (map.get(''+ m)) {
             // push its entry.
             words.push(map.get(''+ m));
         
@@ -145,11 +137,6 @@ function convertMathToWord(math) {
     }
     words = words.map(x => x === "zeroty" ? "" : x);
     return words;
-    // newWords = substitute(words, wordToMath);
-    // for (let w of words) {
-    //     if (w.contains("teen")) {newWords.push(wordToMath.get(w.replace("teen", "")) - - 10)}
-    //     else if (w.contains("ty")) {newWords.push(wordToMath.get(w.replace("ty", "")) * 10)}
-    // }
 }
 
 
@@ -200,12 +187,7 @@ function onAnswerInput() {
 }
 
 
-// define elements
-wordField = document.getElementById("field-word");
+// listen for inputs
 wordField.addEventListener("input", onWordInput);
-
-mathField = document.getElementById("field-math");
-mathField.addEventListener("input", onMathInput); /* should be a specialised function instead of `onInput` */
-
-answerField = document.getElementById("field-answer");
-answerField.addEventListener("input", onAnswerInput); /* should be a specialised function instead of `onInput` */
+mathField.addEventListener("input", onMathInput);
+answerField.addEventListener("input", onAnswerInput);
