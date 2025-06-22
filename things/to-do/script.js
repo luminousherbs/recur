@@ -1,7 +1,5 @@
 console.log(location.pathname);
 
-let container;
-
 function getIndex() {
     return document.querySelectorAll("input").length;
 }
@@ -43,6 +41,7 @@ function createItem(value = "") {
     save();
     
 }
+window.createItem = createItem;
 
 function deleteItem(index) {
     document.querySelector(`[data-index="${index}"]`).remove();
@@ -63,9 +62,6 @@ function load() {
     const list = (localStorage.toDoList ?? "").split("\n");
     for (let item of list) createItem(item);
 }
-
-// define elements
-container = document.getElementById("container");
 
 load();
 
