@@ -16,32 +16,6 @@ const magpieConversion = new Map([
     [13, "beware it's the devil himself"],
 ])
 
-
-/*
-
-(50/120) to (70/120) of girl
-(60/120) to (96/120) of boy
-
-*/
-
-
-const magpieConversionLancashire = new Map([
-    // https://en.wikipedia.org/wiki/One_for_Sorrow_(nursery_rhyme)
-    [1, "sorrow"],
-    [2, "joy"],
-    [3, "a girl"],
-    [4, "a boy"],
-    [5, "silver"],
-    [6, "gold"],
-    [7, "a secret never to be told"],
-    [8, "a wish"],
-    [9, "a kiss"],
-    [10, "a surprise you should be careful not to miss"],
-    [11, "health"],
-    [12, "wealth"],
-    [13, "beware it's the devil himself"],
-])
-
 function flipMap(map) {
     const newMap = new Map();
     for (const [key, value] of map) {
@@ -84,7 +58,7 @@ function onNumberInput() {
 }
 
 function onWordInput() {
-    numberField.value = flipMap(lancashireMode ? magpieConversionLancashire : magpieConversion).get(wordField.value) ?? "";
+    numberField.value = flipMap(magpieConversion).get(wordField.value) ?? "";
     // wordField.style.width = wordField.value.length * (34/48) + 1 + "ch";
 }
 
