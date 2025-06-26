@@ -53,7 +53,7 @@ function convertUsingLowerLimit(key, map) {
     while (true) {
         console.log("loopin'");
         if (key < Math.min(map.keys())) return undefined
-        value = map.get(key);
+        let value = map.get(key);
         if (value !== undefined) {
             return value;
         } else {
@@ -87,7 +87,7 @@ function randomInteger(max) {
 function randomPhoto() {
     submit.disabled = false;
     postgame.hidden = true;
-    imageIndex = randomInteger(10);
+    const imageIndex = randomInteger(10);
     image.src = `/assets/images/shifty${imageIndex}.jpg`;
 }
 
