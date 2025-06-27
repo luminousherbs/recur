@@ -38,8 +38,6 @@ const shiftyExplanations = new Map([
 
 let fieldTemperature, fieldDoneness, image, imageIndex, submit, answer, explanation;
 
-
-
 function flipMap(map) {
     const newMap = new Map();
     for (const [key, value] of map) {
@@ -51,9 +49,8 @@ function flipMap(map) {
 function convertUsingLowerLimit(key, map) {
     key = Math.floor(key);
     while (true) {
-        console.log("loopin'");
         if (key < Math.min(map.keys())) return undefined
-        value = map.get(key);
+        let value = map.get(key);
         if (value !== undefined) {
             return value;
         } else {
@@ -93,6 +90,7 @@ function randomPhoto() {
 
 function onSubmit() {
     submit.disabled = true;
+    console.log("Getting explanation");
     answer.innerText = `Correct answer: ${shiftyScores.get(imageIndex)}.`;
     explanation.innerText = shiftyExplanations.get(imageIndex);
     postgame.hidden = false;
