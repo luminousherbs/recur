@@ -6,40 +6,40 @@ body {
 @media (prefers-color-scheme: dark) {
 
     body {
-        color: #FFFFFF;
-        background-color: #000000;
+        color: #EEEEDD;
+        background-color: #111122;
     }
 
     header {
-        background-color: #222222;
+        background-color: #333344;
     }
 
     aside {
-        border-color: #EEEEEE;
-        background-color: #333333;
+        border-color: #DDDDCC;
+        background-color: #444455;
     }
 
     section {
-        background-color: #222222;
+        background-color: #333344;
     }
 
     textarea {
-        background-color: #222222;
-        color: #FFFFFF;
+        background-color: #333344;
+        color: #EEEEDD;
     }
 
     th, td {
-        border-color: #FFFFFF;
+        border-color: #EEEEDD;
     }
 
     th {
-        background-color: #444444;
+        background-color: #555566;
     }
 
     button:disabled {
-        background-color: #444444;
-        border-color: #000000;
-        color: #CCCCCC;
+        background-color: #555566;
+        border-color: #111122;
+        color: #BBBBAA;
     }
 
     a:link {
@@ -55,40 +55,40 @@ body {
 @media (prefers-color-scheme: light) {
 
     body {
-        color: #000000;
-        background-color: #FFFFFF;
+        color: #111122;
+        background-color: #EEEEDD;
     }
 
     header {
-        background-color: #DDDDDD;
+        background-color: #CCCCBB;
     }
 
     aside {
-        border-color: #111111;
-        background-color: #CCCCCC;
+        border-color: #222233;
+        background-color: #BBBBAA;
     }
 
     section {
-        background-color: #DDDDDD;
+        background-color: #CCCCBB;
     }
 
     textarea {
-        background-color: #DDDDDD;
-        color: #000000;
+        background-color: #CCCCBB;
+        color: #111122;
     }
 
     th, td {
-        border-color: #000000;
+        border-color: #111122;
     }
 
     th {
-        background-color: #BBBBBB;
+        background-color: #AAAA99;
     }
 
     button:disabled {
-        background-color: #777777;
-        border-color: #555555;
-        color: #CCCCCC;
+        background-color: #888899;
+        border-color: #666677;
+        color: #BBBBAA;
         cursor: not-allowed;
     }
 
@@ -186,7 +186,7 @@ button {
     border-color: #C8BD67;
     border-style: solid;
     border-width: 2px;
-    color: #000000;
+    color: #111122;
 }
 
 button:disabled {
