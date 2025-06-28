@@ -35,13 +35,15 @@
     <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
-    <h1>Cipher</h1>
-    <button onclick="edit()">Edit</button>
-    <button onclick="share()">Share</button>
-    <button onclick="downloadHTML()">Download HTML</button>
-    <button onclick="downloadJavaScript()">Download JavaScript</button>
-    <br>
-    <p>Instance: <select id="instanceSelector"></select></p>
+    <header>
+        <h1>Cipher</h1>
+        <button onclick="edit()">Edit</button>
+        <button onclick="share()">Share</button>
+        <button onclick="downloadHTML()">Download HTML</button>
+        <button onclick="downloadJavaScript()">Download JavaScript</button>
+        <br>
+        <p>Instance: <select id="instanceSelector"></select></p>
+    </header>
     <hr>
     <input type="text" id="decodedField" value="Mundus sine Caesaribus"><br>
     <input type="range" min="0" max="25" value=19 id="shiftField"><span id="amountField">19</span><br>

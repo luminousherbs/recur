@@ -13,7 +13,8 @@ const toggleables = new Map([
 ])
 
 const lineEffects = new Map([
-    ["# ", ["\n<h1>", "</h1>\n"]],
+    ["# ", ["\n<header>
+        <h1>", "</h1>\n"]],
     ["## ", ["\n<h2>", "</h2>\n"]],
     ["### ", ["\n<h3>", "</h3>\n"]],
     ["#### ", ["\n<h4>", "</h4>\n"]],
