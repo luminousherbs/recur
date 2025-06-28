@@ -1,2 +1,2 @@
-# luminousherbs
-This is my website. It gets deployed simultaneously to [GitHub Pages](https://luminousherbs.github.io) and [Codeberg Pages](https://luminousherbs.codeberg.page). Issues and pull requests are welcome.
+# recur
+a luminousherbs instance inside a luminousherbs instance
