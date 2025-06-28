@@ -85,7 +85,7 @@ function randomPhoto() {
     submit.disabled = false;
     postgame.hidden = true;
     imageIndex = randomInteger(10);
-    image.src = `/assets/images/shifty${imageIndex}.jpg`;
+    image.src = `/recur/assets/images/shifty${imageIndex}.jpg`;
 }
 
 function onSubmit() {
