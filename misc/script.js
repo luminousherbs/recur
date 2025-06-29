@@ -1,5 +1,0 @@
-console.log(location.pathname);
-
-
-    
-}
